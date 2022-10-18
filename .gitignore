@@ -1,0 +1,4 @@
+# Ignore these files
+.php-cs-fixer.cache*
+node_modules/
+vendor/
