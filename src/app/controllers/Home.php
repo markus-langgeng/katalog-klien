@@ -1,15 +1,17 @@
 <?php
+// use app\core\Controller;
 
 // utk pangglis views
 class Home extends Controller
 {
     public function index()
     {
-        //panggil fungsi view() dari parent class Controller
+        $data["judul"] = "Home";
+        $data["clients"] = $this->model("Clients")->getAllClients();
 
-        // yg template bisa di-uncomment klo udah fix desain header & footernya
-        // $this->view("template/header");
-        $this->view("home/index");
-        // $this->view("template/footer");
+        // panggil fungsi view() dari parent class Controller
+        $this->view("template/header", $data);
+        $this->view("home/index", $data);
+        $this->view("template/footer");
     }
 }

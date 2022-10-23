@@ -1,11 +1,14 @@
 <?php
+/* use app\core\Controller; */
 
 class Login extends Controller
 {
-    public function index()
+    public function index($nama = "lggng")
     {
-        // $this->view("template/header");
-        $this->view("login/index");
-        // $this->view("template/footer");
+        $data["judul"] = "Login";
+        $data["nama"] = $nama;
+        $this->view("template/header", $data);
+        $this->view("login/index", $data);
+        $this->view("template/footer");
     }
 }
