@@ -13,6 +13,6 @@ class Controller
     public function Model($model)
     {
         require_once "../src/app/models/" . $model . ".php";
-        return new $model;
+        return new $model();
     }
 }
