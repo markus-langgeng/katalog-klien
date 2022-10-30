@@ -32,19 +32,19 @@ class Database
 
     public function bind($param, $value, $type = null)
     {
-        if ( is_null($type) ) {
-                switch( true ) {
-                    case is_int($value) :
-                        $type = PDO::PARAM_INT;
-                        break;
-                    case is_bool($value) :
-                        $type = PDO::PARAM_BOOL;
-                        break;
-                    case is_null($value) :
-                        $type = PDO::PARAM_NULL;
-                        break;
-                    default :
-                        $type = PDO::PARAM_STR;
+        if (is_null($type)) {
+            switch(true) {
+                case is_int($value):
+                    $type = PDO::PARAM_INT;
+                    break;
+                case is_bool($value):
+                    $type = PDO::PARAM_BOOL;
+                    break;
+                case is_null($value):
+                    $type = PDO::PARAM_NULL;
+                    break;
+                default:
+                    $type = PDO::PARAM_STR;
             }
         }
 
@@ -69,5 +69,4 @@ class Database
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
-
 }

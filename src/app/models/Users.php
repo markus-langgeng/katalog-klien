@@ -1,8 +1,8 @@
 <?php
 
-class Clients
+class Users
 {
-    private $table = "katalog_klien";
+    private $table = "users";
     private $db;
 
     public function __construct()
@@ -10,7 +10,7 @@ class Clients
         $this->db = new Database;
     }
 
-    public function getAllClients()
+    public function getAllUsers()
     {
         $this->db->query("SELECT * FROM " . $this->table);
         return $this->db->resultSet();
