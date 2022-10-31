@@ -1,34 +1,41 @@
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>NONE</title>
-    </head>
-    <body>
-        <nav>
+<main>
     <div class="container">
-        <div class="forms">
-            <div class="form login">
-                <span class="title">Login</span>
+        <h1 class="text-center my-5">Login</h1>
+        <div class="container-fluid">
 
-                <form action="#">
-                    <div class="input-field">
-                        <input type="text" placeholder="Enter your username" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" class="password" placeholder="Enter your password" required>
-                        <i class="uil uil-lock icon"></i>
+            <div class="row justify-content-center">
+                <form method="POST" action="<?= BASEURL; ?>/login/auth"
+                    class="col col-4 bg-light border border-secondary rounded p-lg-5">
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label">
+                            Username
+                        </label>
+                        <input type="text"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                            aria-describedby="emailHelp">
                     </div>
 
-                    <div class="input-field button">
-                        <input type="button" value="Login">
+                    <div class="mb-3">
+                        <label for="password" class="form-label">
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="password"
+                            name="password">
                     </div>
+
+                    <button
+                        type="submit"
+                        name="login"
+                        class="btn btn-primary">Login</button>
                 </form>
             </div>
+
         </div>
     </div>
-</nav>
-</body>
-</html>
+</main>

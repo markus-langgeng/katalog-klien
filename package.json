@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "dev": "prettier --write ."
+        "prettier": "prettier --write"
     },
     "devDependencies": {
         "@prettier/plugin-php": "^0.19.1",

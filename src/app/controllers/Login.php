@@ -7,7 +7,7 @@ class Login extends Controller
     {
         $data["judul"] = "Login";
         $data["nama"] = $nama;
-        $data["users"] = $this->Model("users")->getUser();
+        $data["users"] = $this->Model("users")->getAllUsers();
 
         $this->view("template/header", $data);
         $this->view("login/index", $data);

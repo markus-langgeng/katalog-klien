@@ -7,7 +7,7 @@ class Clients
 
     public function __construct()
     {
-        $this->db = new Database;
+        $this->db = new Database();
     }
 
     public function getAllClients()
