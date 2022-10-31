@@ -11,7 +11,7 @@
     <div class="container">
         <div class="forms">
             <div class="form login">
-                <span class="title">Login Admin</span>
+                <span class="title">Login</span>
 
                 <form action="#">
                     <div class="input-field">
