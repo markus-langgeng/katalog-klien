@@ -3,29 +3,36 @@
         <h1 class="text-center my-5">Login</h1>
         <div class="container-fluid">
 
-            <?php var_dump($data["users"]); ?>
-
             <div class="row justify-content-center">
-                <form class="col col-4 bg-light border border-secondary rounded p-lg-5">
+                <form method="POST" action="<?= BASEURL; ?>/login/auth"
+                    class="col col-4 bg-light border border-secondary rounded p-lg-5">
 
                     <div class="mb-3">
-                        <label for="username-id" class="form-label">
+                        <label for="username" class="form-label">
                             Username
                         </label>
                         <input type="text"
                             class="form-control"
-                            id="username-id"
+                            id="username"
+                            name="username"
                             aria-describedby="emailHelp">
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">
+                        <label for="password" class="form-label">
                             Password
                         </label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="password"
+                            name="password">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button
+                        type="submit"
+                        name="login"
+                        class="btn btn-primary">Login</button>
                 </form>
             </div>
 
