@@ -1,5 +1,4 @@
 <h1>HALAMAN HOMEEEEEEEE</h1>
-<!-- <p>Namaku  </p> -->
 <p>Buat front end nya di sini (src/app/views/home/index.php)</p>
 <p>Utk hlm login, ada di http://localhost/katalog-klien/public/login</p>
 <p>Utk nulis css, js, dan gambar, ada di /katalog-klien/public/</p>
@@ -34,8 +33,8 @@
 
 <?php
     $no = 1;
-    foreach( $data["clients"] as $client ) :
-?>
+foreach($data["clients"] as $client) :
+    ?>
     <tr>
         <td><?= $no; ?></td>
         <td><?= $client["nama_client"]; ?></td>
@@ -58,14 +57,14 @@
     </tr>
 
 <?php
-    $no++;
-    endforeach;
+        $no++;
+endforeach;
 ?>
 </table>
 <br>
 
 <h2>Daftar Klien-klien (List)</h2>
-<?php foreach( $data["clients"] as $client ) : ?>
+<?php foreach($data["clients"] as $client) : ?>
 <br>
 <ul>
     <li>Nama Klien : <?= $client["nama_client"]; ?> </li>
