@@ -24,8 +24,6 @@
 
     </div>
 
-<<<<<<< HEAD
-=======
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="judulmodal" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -137,4 +135,3 @@
     </div>
 
 </main>
->>>>>>> d2ea1acd54457898e1aaab1aa1bf86c332e339f6
