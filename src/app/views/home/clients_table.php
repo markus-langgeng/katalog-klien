@@ -3,15 +3,15 @@
 
         <thead class="align-top">
             <tr>
-                <th scope="col">No.</th>
+                <th scope="col">No</th>
                 <th scope="col">Nama Klien</th>
                 <th scope="col">Jenis Order</th>
-                <th scope="col">Tgl Order</th>
+                <th scope="col">Tanggal Order</th>
                 <th scope="col">Status Order</th>
                 <th scope="col">Sumber Order</th>
                 <th scope="col">Domain Tujuan</th>
-                <th scope="col">Price (USD)</th>
-                <th scope="col">Aksi</th>
+                <th scope="col">Harga (USD)</th>
+                <th scope="col">Opsi</th>
             </tr>
         </thead>
 

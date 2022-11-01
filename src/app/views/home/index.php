@@ -15,7 +15,7 @@
 
         <div class="row mb-2">
             <h2 class="col">Data Klien</h2>
-            <button class="btn btn-primary col-2 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambahkan Klien</button>
+            <button class="btn btn-primary col-2 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambahkan Data</button>
         </div>
 
         <?php require_once "clients_table.php" ?>
@@ -126,8 +126,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Create Data</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+            <button type="button" class="btn btn-primary">Masukkan Data</button>
             </form>
           </div>
         </div>
