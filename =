@@ -15,7 +15,7 @@
 
         <div class="row mb-2">
             <h2 class="col">Data Klien</h2>
-            <button class="btn btn-primary col-2 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambahkan Klien</button>
+            <button class="btn btn-primary col-2 me-3">Tambahkan Klien</button>
         </div>
 
         <?php require_once "clients_table.php" ?>
