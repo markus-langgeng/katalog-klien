@@ -16,9 +16,8 @@
         </thead>
 
     <?php
-        $no = 1;
-        foreach ($data["clients"] as $client):
-    ?>
+    $no = 1;
+    foreach ($data["clients"] as $client): ?>
 
             <tr>
                 <th scope="row"><?= $no ?></th>
@@ -44,9 +43,7 @@
                 </td>
             </tr>
 
-    <?php
-        $no++;
-        endforeach;
+    <?php $no++;endforeach;
     ?>
     </table>
 </div>

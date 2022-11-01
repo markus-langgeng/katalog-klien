@@ -5,7 +5,7 @@
         <div class="container-fluid">
 
             <div class="row justify-content-center">
-                <form method="POST" action="<?= BASEURL; ?>/login/auth"
+                <form method="POST" action="<?= BASEURL ?>/login/auth"
                     class="col col-4 bg-light border border-secondary rounded p-lg-5">
 
                     <div class="mb-3">

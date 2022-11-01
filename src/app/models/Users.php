@@ -15,9 +15,7 @@ class Users
         $nama = $_POST["username"];
         $password = $_POST["password"];
 
-        $query = "SELECT * FROM "
-            . $this->table
-            . " WHERE username=:username";
+        $query = "SELECT * FROM " . $this->table . " WHERE username=:username";
 
         $this->db->query($query);
         $this->db->bind("username", $nama);
@@ -25,23 +23,32 @@ class Users
 
         $user = $this->db->single();
 
-        if ( $user ) {
-            if ( $password == $user["password"]) {
+        if ($user) {
+            if ($password == $user["password"]) {
                 /* return "ok"; */
                 Flasher::setFlash("Berhasil", "Login!", "success");
                 header("Location: " . BASEURL . "/home");
-                exit;
+                exit();
             } else {
                 /* return "pw salah"; */
-                Flasher::setFlash("Gagal", "Login!", "danger", "Username dan password tidak sesuai.");
+                Flasher::setFlash(
+                    "Gagal",
+                    "Login!",
+                    "danger",
+                    "Username dan password tidak sesuai."
+                );
                 header("Location: " . BASEURL . "/login");
-                exit;
+                exit();
             }
-
         } else {
-            Flasher::setFlash("Gagal", "Login!", "danger","Username tidak ditemukan.");
+            Flasher::setFlash(
+                "Gagal",
+                "Login!",
+                "danger",
+                "Username tidak ditemukan."
+            );
             header("Location: " . BASEURL . "/login");
-            exit;
+            exit();
         }
     }
 }
