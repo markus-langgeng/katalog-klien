@@ -3,14 +3,17 @@
 
 class Login extends Controller
 {
-    public function index($nama = "lggng")
+    public function index()
     {
         $data["judul"] = "Login";
-        $data["nama"] = $nama;
-        $data["users"] = $this->Model("users")->getAllUsers();
 
         $this->view("template/header", $data);
         $this->view("login/index", $data);
         $this->view("template/footer");
+    }
+
+    public function auth()
+    {
+        $this->Model("Users")->validate();
     }
 }

@@ -1,5 +1,6 @@
 <main>
     <div class="container">
+
         <h1 class="text-center my-5">Login</h1>
         <div class="container-fluid">
 
@@ -15,7 +16,8 @@
                             class="form-control"
                             id="username"
                             name="username"
-                            aria-describedby="emailHelp">
+                            aria-describedby="emailHelp"
+                            required>
                     </div>
 
                     <div class="mb-3">
@@ -26,14 +28,21 @@
                             type="password"
                             class="form-control"
                             id="password"
-                            name="password">
+                            name="password"
+                            required>
                     </div>
 
                     <button
                         type="submit"
-                        name="login"
+                        name="submit"
                         class="btn btn-primary">Login</button>
                 </form>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-5 mx-auto">
+                    <?php Flasher::flash(); ?>
+                </div>
             </div>
 
         </div>

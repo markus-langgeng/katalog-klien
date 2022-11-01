@@ -1,6 +1,10 @@
 <div class="main">
     <div class="container">
 
+        <div class="row mt-3">
+            <?php Flasher::flash(); ?>
+        </div>
+
         <h1>HALAMAN HOMEEEEEEEE</h1>
         <p>Buat front end nya di sini (src/app/views/home/index.php)</p>
         <p>Utk hlm login, ada di http://localhost/katalog-klien/public/login</p>

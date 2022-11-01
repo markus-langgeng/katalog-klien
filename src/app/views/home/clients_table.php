@@ -29,16 +29,18 @@
                 <td><?= $client["sumber_order"] ?></td>
                 <td><?= $client["domain_tujuan"] ?></td>
                 <td><?= $client["price"] ?></td>
-                <td class="d-grid gap-2 d-md-block">
-                    <button type="button" class="btn btn-primary btn-sm">
-                        Detail
-                    </button>
-                    <button type="button" class="btn btn-primary btn-sm">
-                        Edit
-                    </button>
-                    <button type="button" class="btn btn-danger btn-sm">
-                        Hapus
-                    </button>
+                <td>
+                    <div class="d-grid gap-2 d-xxl-block ">
+                        <button type="button" class="btn btn-primary btn-sm">
+                            Detail
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm">
+                            Edit
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm">
+                            Hapus
+                        </button>
+                    </div>
                 </td>
             </tr>
 
