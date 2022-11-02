@@ -1,6 +1,6 @@
 <?php
 
-class Clients
+class ClientsModel
 {
     private $table = "katalog_klien";
     private $db;
@@ -14,5 +14,12 @@ class Clients
     {
         $this->db->query("SELECT * FROM " . $this->table);
         return $this->db->resultSet();
+    }
+
+    public function getDetailsById($id)
+    {
+        $this->db->query("SELECT * FROM " . $this->table . " WHERE id = :id");
+        $this->db->bind("id", $id);
+        return $this->db->single();
     }
 }

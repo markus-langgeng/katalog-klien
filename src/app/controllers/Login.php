@@ -14,6 +14,6 @@ class Login extends Controller
 
     public function auth()
     {
-        $this->Model("Users")->validate();
+        $this->Model("UsersModel")->validate();
     }
 }
