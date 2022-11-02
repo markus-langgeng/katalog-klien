@@ -1,6 +1,6 @@
 <?php
 
-class Users
+class UsersModel
 {
     private $table = "users";
     private $db;
@@ -25,12 +25,10 @@ class Users
 
         if ($user) {
             if ($password == $user["password"]) {
-                /* return "ok"; */
                 Flasher::setFlash("Berhasil", "Login!", "success");
                 header("Location: " . BASEURL . "/home");
                 exit();
             } else {
-                /* return "pw salah"; */
                 Flasher::setFlash(
                     "Gagal",
                     "Login!",

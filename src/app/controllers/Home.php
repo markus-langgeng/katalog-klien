@@ -7,7 +7,7 @@ class Home extends Controller
     public function index()
     {
         $data["judul"] = "Home";
-        $data["clients"] = $this->Model("Clients")->getAllClients();
+        $data["clients"] = $this->Model("ClientsModel")->getAllClients();
 
         // panggil fungsi view() dari parent class Controller
         $this->view("template/header", $data);

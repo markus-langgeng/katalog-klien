@@ -30,12 +30,20 @@
                 <td><?= $client["price"] ?></td>
                 <td>
                     <div class="d-grid gap-2 d-xxl-block ">
-                        <button type="button" class="btn btn-primary btn-sm">
+                        <a href="<?= BASEURL ?>/clients/detail/<?= $client[
+    "id"
+] ?>"
+                            class="btn btn-primary btn-sm"
+                            role="button">
                             Detail
-                        </button>
-                        <button type="button" class="btn btn-primary btn-sm">
+                        </a>
+                        <a href="<?= BASEURL ?>/clients/edit/<?= $client[
+    "id"
+] ?>"
+                            class="btn btn-primary btn-sm"
+                            role="button">
                             Edit
-                        </button>
+                        </a>
                         <button type="button" class="btn btn-danger btn-sm">
                             Hapus
                         </button>
