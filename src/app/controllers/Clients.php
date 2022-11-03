@@ -23,4 +23,12 @@ class Clients extends Controller
         $this->view("klien/detail_klien", $data);
         $this->view("template/footer");
     }
+
+    public function tambah()
+    {
+        if( $this->model('ClientsModel')->tambahdataklien($_POST) > 0 )  {
+            header('Location: ' . BASEURL );
+            exit;
+        }
+    }
 }

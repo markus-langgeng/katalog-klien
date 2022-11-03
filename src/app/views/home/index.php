@@ -19,7 +19,7 @@
                 <button
                     class="btn btn-primary d-inline-block align-self-end"
                     data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
+                    data-bs-target="#formModal">
                     Tambahkan Klien
                 </button>
             </div>
@@ -31,7 +31,7 @@
 
     </div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="judulmodal" aria-hidden="true">
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="judulmodal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -41,36 +41,36 @@
                 </div>
 
                 <div class="modal-body">
-                    <form action="" method="">
+                    <form action="<?= BASEURL; ?>/Clients/tambah" method="post">
 
                         <div class="form-group">
-                            <label for="nama" class="form-label">Nama Klien</label>
-                            <input type="text" class="form-control" id="nama" name="nama">
+                            <label for="nama_client" class="form-label">Nama Klien</label>
+                            <input type="text" class="form-control" id="nama_client" name="nama_client">
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="form-label">Email Klien</label>
-                            <input type="email" class="form-control" placeholder="namemail@example.com" id="email" name="email">
+                            <label for="email_client" class="form-label">Email Klien</label>
+                            <input type="email" class="form-control" placeholder="namemail@example.com" id="email_client" name="email_client">
                         </div>
 
                         <div class="form-group">
-                            <label for="jenisorder">Jenis Order</label>
-                            <input type="text" class="form-control" id="jenisorder" name="jenisorder">
+                            <label for="jenis_order">Jenis Order</label>
+                            <input type="text" class="form-control" id="jenis_order" name="jenis_order">
                         </div>
 
                         <div class="form-group">
-                            <label for="tanggal" class="form-label">Tanggal Order</label>
-                            <input type="date" class="form-control" id="tanggal" name="tanggal">
+                            <label for="tgl_order" class="form-label">Tanggal Order</label>
+                            <input type="date" class="form-control" id="tgl_order" name="tgl_order">
                         </div>
 
                         <div class="form-group">
-                            <label for="sumberorder" class="form-label">Sumber Order</label>
-                            <input type="text" class="form-control" id="sumberorder" name="sumberorder">
+                            <label for="sumber_order" class="form-label">Sumber Order</label>
+                            <input type="text" class="form-control" id="sumber_order" name="sumber_order">
                         </div>
 
                         <div class="form-group">
-                            <label for="domaintujuan" class="form-label">Domain Tujuan</label>
-                            <input type="text" class="form-control" placeholder="www.example.com" id="domaintujuan" name="domaintujuan">
+                            <label for="domain_tujuan" class="form-label">Domain Tujuan</label>
+                            <input type="text" class="form-control" placeholder="www.example.com" id="domain_tujuan" name="domain_tujuan">
                         </div>
 
                         <div class="form-group">
@@ -84,54 +84,54 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="statusorder" class="form-label">Status Orderan</label>
-                            <input type="text" class="form-control" id="statusorder" name="statusorder">
+                            <label for="status_order" class="form-label">Status Orderan</label>
+                            <input type="text" class="form-control" id="status_order" name="status_order">
                         </div>
 
                         <div class="form-group">
-                            <label for="tanggal" class="form-label">Tanggal Bayar</label>
-                            <input type="date" class="form-control" id="tanggal" name="tanggal">
+                            <label for="tgl_bayar" class="form-label">Tanggal Bayar</label>
+                            <input type="date" class="form-control" id="tgl_bayar" name="tgl_bayar">
                         </div>
 
                         <div class="form-group">
-                            <label for="idtransaksi" class="form-label">ID Transaksi</label>
-                            <input type="text" class="form-control" id="idtransaksi" name="idtransaksi">
+                            <label for="id_transaksi" class="form-label">ID Transaksi</label>
+                            <input type="text" class="form-control" id="id_transaksi" name="id_transaksi">
                         </div>
 
                         <div class="form-group">
-                            <label for="invoicelink" class="form-label">Link Invoice</label>
-                            <input type="text" class="form-control" id="invoicelink" name="invoicelink">
+                            <label for="invoice_link" class="form-label">Link Invoice</label>
+                            <input type="text" class="form-control" id="invoice_link" name="invoice_link">
                         </div>
 
                         <div class="form-group">
-                            <label for="accpaypalclient" class="form-label">Akun Paypal Klien</label>
-                            <input type="text" class="form-control" placeholder="name@paypalexample.com" id="accpaypalclient" name="accpaypalclient">
+                            <label for="acc_paypal_client" class="form-label">Akun Paypal Klien</label>
+                            <input type="text" class="form-control" placeholder="name@paypalexample.com" id="acc_paypal_client" name="acc_paypal_client">
                         </div>
 
                         <div class="form-group">
-                            <label for="ownerdomain" class="form-label">Pemilik Domain</label>
-                            <input type="text" class="form-control" id="ownerdomain" name="ownerdomain">
+                            <label for="owner_domain" class="form-label">Pemilik Domain</label>
+                            <input type="text" class="form-control" id="owner_domain" name="owner_domain">
                         </div>
 
                         <div class="form-group">
-                            <label for="admindomain" class="form-label">Admin Domain</label>
-                            <input type="text" class="form-control" id="admindomain" name="admindomain">
+                            <label for="admin" class="form-label">Admin Domain</label>
+                            <input type="text" class="form-control" id="admin" name="admin">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="glad" class="form-label">GLad</label>
+                            <input type="text" class="form-control" id="glad" name="glad">
                         </div>
 
                         <div class="form-group">
                             <label for="note" class="form-label">Catatan</label>
                             <input type="text" class="form-control" id="note" name="note">
                         </div>
-
-                        <div class="form-group">
-                            <label for="glad" class="form-label">Glad</label>
-                            <input type="text" class="form-control" id="glad" name="glad">
-                        </div>
                 </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Create Data</button>
+                    <button type="submit" class="btn btn-primary">Create Data</button>
                     </form>
                 </div>
 
