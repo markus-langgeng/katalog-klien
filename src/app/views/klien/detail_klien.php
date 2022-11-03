@@ -17,13 +17,13 @@
             </tr>
 
             <tr>
-                <th scope="row">Tanggal Order</th>
-                <td><?= $data["detail_klien"]["tgl_order"] ?></td>
+                <th scope="row">Jenis Order</th>
+                <td><?= $data["detail_klien"]["jenis_order"] ?></td>
             </tr>
 
             <tr>
-                <th scope="row">Jenis Order</th>
-                <td><?= $data["detail_klien"]["jenis_order"] ?></td>
+                <th scope="row">Tanggal Order </th>
+                <td><?= $data["detail_klien"]["tgl_order"] ?></td>
             </tr>
 
             <tr>
@@ -41,7 +41,7 @@
             </tr>
 
             <tr>
-                <th scope="row">Peramalink</th>
+                <th scope="row">Permalink</th>
                 <td>
                     <a href="<?= $data["detail_klien"]["permalink"] ?>">
                         <?= $data["detail_klien"]["permalink"] ?>
@@ -55,7 +55,7 @@
             </tr>
 
             <tr>
-                <th scope="row">Status Order</th>
+                <th scope="row">Status Orderan</th>
                 <td><?= $data["detail_klien"]["status_order"] ?></td>
             </tr>
 
@@ -70,7 +70,7 @@
             </tr>
 
             <tr>
-                <th scope="row">Invoice Link</th>
+                <th scope="row">Link Invoice</th>
                 <td>
                     <a href="<?= $data["detail_klien"]["invoice_link"] ?>">
                         <?= $data["detail_klien"]["invoice_link"] ?>
@@ -89,7 +89,7 @@
             </tr>
 
             <tr>
-                <th scope="row">Admin</th>
+                <th scope="row">Admin Domain</th>
                 <td><?= $data["detail_klien"]["admin"] ?></td>
             </tr>
 
@@ -110,7 +110,7 @@
         </table>
 
         <div class="container-fluid d-flex gap-2 mb-4">
-            <a href="<?= BASEURL ?>" class="btn btn-secondary ms-auto">Kembali</a>
+            <a href="<?= BASEURL ?>" class="btn btn-dangers ms-auto">Kembali</a>
             <button class="btn btn-primary">Edit</button>
         </div>
 
