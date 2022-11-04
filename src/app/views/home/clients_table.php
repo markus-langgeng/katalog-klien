@@ -43,10 +43,14 @@
                             class="btn btn-primary btn-sm"
                             role="button">
                             Edit
-                        </a>
-                        <button type="button" class="btn btn-danger btn-sm">
+
+                            <a href="<?= BASEURL ?>/clients/hapus/<?= $client[
+    "id"
+] ?>" 
+                            class="btn btn-danger btn-sm"
+                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');"role="button">
                             Hapus
-                        </button>
+                        </a>
                     </div>
                 </td>
             </tr>
