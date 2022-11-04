@@ -15,7 +15,8 @@ class UsersModel
         $nama = $_POST["username"];
         $password = $_POST["password"];
 
-        $query = "SELECT * FROM " . $this->table . " WHERE username=:username";
+        $query =
+            "SELECT * FROM " . $this->table . " WHERE username = :username";
 
         $this->db->query($query);
         $this->db->bind("username", $nama);

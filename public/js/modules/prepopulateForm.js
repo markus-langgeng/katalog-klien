@@ -1,5 +1,4 @@
-const el = document
-
+const el = document;
 
 function prepopulateForm(a) {
     el.querySelector("#id_client").value = a.id;

@@ -1,4 +1,5 @@
 import prepopulateForm from "./prepopulateForm.js";
+import clearForm from "./clearForm.js";
 
 const editBtn = document.querySelectorAll(".btnEditDataKlien");
 const addBtn = document.querySelector("#btnTambahDataKlien");
@@ -14,6 +15,7 @@ function modalFormDataKlien() {
     addBtn.addEventListener("click", function() {
         judulModal.innerHTML = "Tambah Data Klien";
         submitBtn.innerHTML = "Tambah Data";
+        clearForm();
     });
 
     // Edit Data
@@ -27,20 +29,13 @@ function modalFormDataKlien() {
             submitBtn.innerHTML = "Edit Data";
             formDataKlien.setAttribute("action", urlActionForm);
 
-            console.log(formDataKlien.getAttribute("action"));
-
             // Ajax
             xhr.open("POST", urlAjax, true);
             xhr.onreadystatechange = () => {
                 if (xhr.readyState != 4 || xhr.status != 200) return;
                 let response = JSON.parse(xhr.responseText);
-                // console.log(response);
-                // console.log(response.id);
 
                 prepopulateForm(response);
-                /* TODO :
-                    buat function utk pre-populate form input dgn data dari db
-                */
             }
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.send("id="+id);
