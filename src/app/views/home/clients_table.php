@@ -31,7 +31,8 @@
                 <td>
                     <div class="d-grid gap-2 d-xxl-block ">
                         <a
-                        href="<?= BASEURL ?>/clients/detail/<?= $client["id"] ?>"
+                        href="<?= BASEURL ?>/clients/detail/
+<?= $client["id"] ?>"
                         class="btn btn-primary btn-sm"
                         role="button">
                             Detail

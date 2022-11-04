@@ -33,7 +33,7 @@ class UsersModel
                     "Gagal",
                     "Login!",
                     "danger",
-                    "Username dan password tidak sesuai."
+                    "Username dan password tidak sesuai.",
                 );
                 header("Location: " . BASEURL . "/login");
                 exit();
@@ -43,7 +43,7 @@ class UsersModel
                 "Gagal",
                 "Login!",
                 "danger",
-                "Username tidak ditemukan."
+                "Username tidak ditemukan.",
             );
             header("Location: " . BASEURL . "/login");
             exit();

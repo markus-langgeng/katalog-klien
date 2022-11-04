@@ -16,7 +16,7 @@ class Clients extends Controller
         $data["judul"] = "Detail";
 
         $data["detail_klien"] = $this->Model("ClientsModel")->getDetailsById(
-            $id
+            $id,
         );
 
         $this->view("template/header", $data);
@@ -26,9 +26,9 @@ class Clients extends Controller
 
     public function tambah()
     {
-        if( $this->model('ClientsModel')->tambahDataKlien($_POST) > 0 )  {
-            header('Location: ' . BASEURL );
-            exit;
+        if ($this->model("ClientsModel")->tambahDataKlien($_POST) > 0) {
+            header("Location: " . BASEURL);
+            exit();
         }
     }
 

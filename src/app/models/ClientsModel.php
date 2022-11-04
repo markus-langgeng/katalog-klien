@@ -25,7 +25,10 @@ class ClientsModel
 
     public function tambahDataKlien($data)
     {
-        $query = "INSERT INTO " . $this->table . " VALUES
+        $query =
+            "INSERT INTO " .
+            $this->table .
+            " VALUES
             ('',
             :nama_client,
             :email_client,
@@ -46,25 +49,24 @@ class ClientsModel
             :note
             )";
 
-
         $this->db->query($query);
-        $this->db->bind('nama_client', $data['nama_client']);
-        $this->db->bind('email_client', $data['email_client']);
-        $this->db->bind('jenis_order', $data['jenis_order']);
-        $this->db->bind('tgl_order', $data['tgl_order']);
-        $this->db->bind('sumber_order', $data['sumber_order']);
-        $this->db->bind('domain_tujuan', $data['domain_tujuan']);
-        $this->db->bind('permalink', $data['permalink']);
-        $this->db->bind('price', $data['price']);
-        $this->db->bind('status_order', $data['status_order']);
-        $this->db->bind('tgl_bayar', $data['tgl_bayar']);
-        $this->db->bind('id_transaksi', $data['id_transaksi']);
-        $this->db->bind('invoice_link', $data['invoice_link']);
-        $this->db->bind('acc_paypal_client', $data['acc_paypal_client']);
-        $this->db->bind('owner_domain', $data['owner_domain']);
-        $this->db->bind('admin', $data['admin']);
-        $this->db->bind('glad', $data['glad']);
-        $this->db->bind('note', $data['note']);
+        $this->db->bind("nama_client", $data["nama_client"]);
+        $this->db->bind("email_client", $data["email_client"]);
+        $this->db->bind("jenis_order", $data["jenis_order"]);
+        $this->db->bind("tgl_order", $data["tgl_order"]);
+        $this->db->bind("sumber_order", $data["sumber_order"]);
+        $this->db->bind("domain_tujuan", $data["domain_tujuan"]);
+        $this->db->bind("permalink", $data["permalink"]);
+        $this->db->bind("price", $data["price"]);
+        $this->db->bind("status_order", $data["status_order"]);
+        $this->db->bind("tgl_bayar", $data["tgl_bayar"]);
+        $this->db->bind("id_transaksi", $data["id_transaksi"]);
+        $this->db->bind("invoice_link", $data["invoice_link"]);
+        $this->db->bind("acc_paypal_client", $data["acc_paypal_client"]);
+        $this->db->bind("owner_domain", $data["owner_domain"]);
+        $this->db->bind("admin", $data["admin"]);
+        $this->db->bind("glad", $data["glad"]);
+        $this->db->bind("note", $data["note"]);
 
         $this->db->execute();
 
@@ -73,8 +75,11 @@ class ClientsModel
 
     public function ubahDataKlien($data)
     {
-        $query = "UPDATE " . $this->table . " SET "
-            . "
+        $query =
+            "UPDATE " .
+            $this->table .
+            " SET " .
+            "
             nama_client = :nama_client,
             email_client = :email_client,
             jenis_order = :jenis_order,
@@ -94,40 +99,38 @@ class ClientsModel
             note = :note
             WHERE id = :id";
 
-
         $this->db->query($query);
-        $this->db->bind('id', $data['id_client']);
-        $this->db->bind('nama_client', $data['nama_client']);
-        $this->db->bind('email_client', $data['email_client']);
-        $this->db->bind('jenis_order', $data['jenis_order']);
-        $this->db->bind('tgl_order', $data['tgl_order']);
-        $this->db->bind('sumber_order', $data['sumber_order']);
-        $this->db->bind('domain_tujuan', $data['domain_tujuan']);
-        $this->db->bind('permalink', $data['permalink']);
-        $this->db->bind('price', $data['price']);
-        $this->db->bind('status_order', $data['status_order']);
-        $this->db->bind('tgl_bayar', $data['tgl_bayar']);
-        $this->db->bind('id_transaksi', $data['id_transaksi']);
-        $this->db->bind('invoice_link', $data['invoice_link']);
-        $this->db->bind('acc_paypal_client', $data['acc_paypal_client']);
-        $this->db->bind('owner_domain', $data['owner_domain']);
-        $this->db->bind('admin', $data['admin']);
-        $this->db->bind('glad', $data['glad']);
-        $this->db->bind('note', $data['note']);
+        $this->db->bind("id", $data["id_client"]);
+        $this->db->bind("nama_client", $data["nama_client"]);
+        $this->db->bind("email_client", $data["email_client"]);
+        $this->db->bind("jenis_order", $data["jenis_order"]);
+        $this->db->bind("tgl_order", $data["tgl_order"]);
+        $this->db->bind("sumber_order", $data["sumber_order"]);
+        $this->db->bind("domain_tujuan", $data["domain_tujuan"]);
+        $this->db->bind("permalink", $data["permalink"]);
+        $this->db->bind("price", $data["price"]);
+        $this->db->bind("status_order", $data["status_order"]);
+        $this->db->bind("tgl_bayar", $data["tgl_bayar"]);
+        $this->db->bind("id_transaksi", $data["id_transaksi"]);
+        $this->db->bind("invoice_link", $data["invoice_link"]);
+        $this->db->bind("acc_paypal_client", $data["acc_paypal_client"]);
+        $this->db->bind("owner_domain", $data["owner_domain"]);
+        $this->db->bind("admin", $data["admin"]);
+        $this->db->bind("glad", $data["glad"]);
+        $this->db->bind("note", $data["note"]);
 
         $this->db->execute();
 
-        $row =  $this->db->rowCount();
+        $row = $this->db->rowCount();
 
-        if ( $row > 0 ) {
+        if ($row > 0) {
             Flasher::setFlash("Data berhasil", "diedit!", "success");
             header("Location: " . BASEURL);
-            exit;
+            exit();
         } else {
             Flasher::setFlash("Data gagal", "diedit!", "danger");
             header("Location: " . BASEURL);
-            exit;
+            exit();
         }
     }
-
 }
