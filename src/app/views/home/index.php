@@ -17,9 +17,10 @@
             <h2 class="col">Data Klien</h2>
             <div class="container col d-flex justify-content-end">
                 <button
+                    id="btnTambahDataKlien"
                     class="btn btn-primary d-inline-block align-self-end"
                     data-bs-toggle="modal"
-                    data-bs-target="#formModal">
+                    data-bs-target="#modalDataKlien">
                     Tambahkan Klien
                 </button>
             </div>
@@ -31,17 +32,24 @@
 
     </div>
 
-    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="judulmodal" aria-hidden="true">
+    <div class="modal fade" id="modalDataKlien" tabindex="-1"
+        aria-labelledby="judulModal"
+        aria-hidden="true">
+
         <div class="modal-dialog">
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="judulmodal">Data Klien</h1>
+                    <h1 class="modal-title fs-5" id="judulModalKlien">
+                        Tambah Data Klien
+                    </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="modal-body">
-                    <form action="<?= BASEURL; ?>/Clients/tambah" method="post">
+                    <form action="<?= BASEURL; ?>/Clients/tambah"
+                    method="post"
+                    id="form_data_klien">
 
                         <div class="form-group">
                             <label for="nama_client" class="form-label">Nama Klien</label>
@@ -130,8 +138,18 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Create Data</button>
+
+                        <button type="button"
+                            class="btn btn-danger"
+                            data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="submit"
+                            id="btnSubmitFormDataKlien"
+                            class="btn btn-primary">
+                            Create Data
+                        </button>
+
                     </form>
                 </div>
 

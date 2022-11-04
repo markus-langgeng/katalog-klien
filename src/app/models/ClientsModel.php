@@ -23,13 +23,13 @@ class ClientsModel
         return $this->db->single();
     }
 
-    public function tambahdataklien($data)
+    public function tambahDataKlien($data)
     {
         $query = "INSERT INTO " . $this->table . "
                     VALUES
                     ('', :nama_client, :email_client, :jenis_order, :tgl_order, :sumber_order, :domain_tujuan, :permalink, :price, :status_order, :tgl_bayar, :id_transaksi, :invoice_link, :acc_paypal_client, :owner_domain, :admin, :glad, :note)";
-        
-        
+
+
         $this->db->query($query);
         $this->db->bind('nama_client', $data['nama_client']);
         $this->db->bind('email_client', $data['email_client']);
@@ -48,7 +48,7 @@ class ClientsModel
         $this->db->bind('admin', $data['admin']);
         $this->db->bind('glad', $data['glad']);
         $this->db->bind('note', $data['note']);
-        
+
         $this->db->execute();
 
         return $this->db->rowCount();

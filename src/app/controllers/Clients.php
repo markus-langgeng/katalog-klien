@@ -26,9 +26,15 @@ class Clients extends Controller
 
     public function tambah()
     {
-        if( $this->model('ClientsModel')->tambahdataklien($_POST) > 0 )  {
+        if( $this->model('ClientsModel')->tambahDataKlien($_POST) > 0 )  {
             header('Location: ' . BASEURL );
             exit;
         }
+    }
+
+    public function edit()
+    {
+        $dataKlien = $this->Model("ClientsModel")->getDetailsById($_POST["id"]);
+        echo json_encode($dataKlien);
     }
 }

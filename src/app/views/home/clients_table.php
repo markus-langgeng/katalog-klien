@@ -30,20 +30,20 @@
                 <td><?= $client["price"] ?></td>
                 <td>
                     <div class="d-grid gap-2 d-xxl-block ">
-                        <a href="<?= BASEURL ?>/clients/detail/<?= $client[
-    "id"
-] ?>"
-                            class="btn btn-primary btn-sm"
-                            role="button">
+                        <a
+                        href="<?= BASEURL ?>/clients/detail/<?= $client["id"] ?>"
+                        class="btn btn-primary btn-sm"
+                        role="button">
                             Detail
                         </a>
-                        <a href="<?= BASEURL ?>/clients/edit/<?= $client[
-    "id"
-] ?>"
-                            class="btn btn-primary btn-sm"
-                            role="button">
+                        <button
+                            class="btn btn-primary btn-sm btnEditDataKlien"
+                            role="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalDataKlien"
+                            data-id-klien="<?= $client["id"] ?>">
                             Edit
-                        </a>
+                        </button>
                         <button type="button" class="btn btn-danger btn-sm">
                             Hapus
                         </button>
