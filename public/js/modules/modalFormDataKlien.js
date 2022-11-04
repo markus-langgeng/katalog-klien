@@ -19,22 +19,23 @@ function modalFormDataKlien() {
     // Edit Data
     for (let i = 0; i < editBtn.length; i++) {
         editBtn[i].addEventListener("click", function () {
-            formDataKlien.setAttribute("action", "http://localhost/katalog-klien/public/clients/edit");
-            console.log(formDataKlien);
-
             let id = this.getAttribute("data-id-klien");
-            const url = "http://localhost/katalog-klien/public/clients/edit";
+            const urlAjax = "http://localhost/katalog-klien/public/clients/getDetailToUpdate";
+            const urlActionForm = "http://localhost/katalog-klien/public/clients/edit";
 
             judulModal.innerHTML = "Edit Data Klien"
             submitBtn.innerHTML = "Edit Data";
+            formDataKlien.setAttribute("action", urlActionForm);
+
+            console.log(formDataKlien.getAttribute("action"));
 
             // Ajax
-            xhr.open("POST", url, true);
+            xhr.open("POST", urlAjax, true);
             xhr.onreadystatechange = () => {
                 if (xhr.readyState != 4 || xhr.status != 200) return;
                 let response = JSON.parse(xhr.responseText);
-                console.log(response);
-                console.log(response.id);
+                // console.log(response);
+                // console.log(response.id);
 
                 prepopulateForm(response);
                 /* TODO :

@@ -2,6 +2,7 @@ const el = document
 
 
 function prepopulateForm(a) {
+    el.querySelector("#id_client").value = a.id;
     el.querySelector("#nama_client").value = a.nama_client;
     el.querySelector("#email_client").value = a.email_client;
     el.querySelector("#jenis_order").value = a.jenis_order;

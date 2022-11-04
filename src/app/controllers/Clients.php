@@ -32,9 +32,14 @@ class Clients extends Controller
         }
     }
 
-    public function edit()
+    public function getDetailToUpdate()
     {
         $dataKlien = $this->Model("ClientsModel")->getDetailsById($_POST["id"]);
         echo json_encode($dataKlien);
+    }
+
+    public function edit()
+    {
+        $this->Model("ClientsModel")->ubahDataKlien($_POST);
     }
 }
