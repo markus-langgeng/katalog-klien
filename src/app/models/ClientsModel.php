@@ -51,6 +51,26 @@ class ClientsModel
         
         $this->db->execute();
 
+        $row = $this->db->rowCount();
+        if($row > 0 ){
+            Flasher::setFlash('Data Berhasil', 'Ditambahkan', 'success');
+            header('Location: ' . BASEURL );
+            exit;             
+        }else{
+            Flasher::setFlash('Data Gagal', 'Ditambahkan', 'danger');
+            header('Location: ' . BASEURL );
+            exit;
+        }
+    }
+
+    public function hapusdataklien($id)
+    {
+        $query = "DELETE FROM " .$this->table." WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('id',$id);
+
+        $this->db->execute();
+
         return $this->db->rowCount();
     }
 

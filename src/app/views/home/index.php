@@ -14,13 +14,19 @@
         <br>
 
         <div class="row mb-2">
+            <div class="col">
+            <?php Flasher::flash(); ?>
+            </div>
+        </div>
+
+        <div class="row mb-2">
             <h2 class="col">Data Klien</h2>
             <div class="container col d-flex justify-content-end">
                 <button
                     class="btn btn-primary d-inline-block align-self-end"
                     data-bs-toggle="modal"
                     data-bs-target="#formModal">
-                    Tambahkan Klien
+                    Tambahkan Data Klien
                 </button>
             </div>
         </div>
@@ -130,8 +136,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Create Data</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary">Tambahkan Data</button>
                     </form>
                 </div>
 
