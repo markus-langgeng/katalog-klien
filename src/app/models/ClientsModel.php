@@ -74,31 +74,31 @@ class ClientsModel
         if ($row > 0) {
             Flasher::setFlash("Data berhasil", "ditambahkan.", "success");
             header("Location: " . BASEURL);
-            exit;
+            exit();
         } else {
             Flasher::setFlash("Data gagal", "ditambahkan.", "danger");
             header("Location: " . BASEURL);
-            exit;
+            exit();
         }
     }
 
     public function hapusDataKlien($id)
     {
-        $query = "DELETE FROM " .$this->table." WHERE id = :id";
+        $query = "DELETE FROM " . $this->table . " WHERE id = :id";
         $this->db->query($query);
         $this->db->bind("id", $id);
 
         $this->db->execute();
 
-        $row =  $this->db->rowCount();
+        $row = $this->db->rowCount();
         if ($row > 0) {
             Flasher::setFlash("Data berhasil", "dihapus.", "success");
             header("Location: " . BASEURL);
-            exit;
+            exit();
         } else {
             Flasher::setFlash("Data gagal", "dihapus.", "danger");
             header("Location: " . BASEURL);
-            exit;
+            exit();
         }
     }
 
