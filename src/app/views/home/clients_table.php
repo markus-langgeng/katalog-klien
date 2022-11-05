@@ -34,9 +34,7 @@
                         href="<?= BASEURL ?>/clients/detail/
 <?= $client["id"] ?>"
                         class="btn btn-primary btn-sm"
-                        role="button">
-                            Detail
-                        </a>
+                        role="button">Detail</a>
                         <button
                             class="btn btn-primary btn-sm btnEditDataKlien"
                             role="button"
@@ -44,13 +42,13 @@
                             data-bs-target="#modalDataKlien"
                             data-id-klien="<?= $client["id"] ?>">
                             Edit
+                        </button>
 
                         <a href="<?= BASEURL ?>/clients/hapus/
 <?= $client["id"] ?>"
                             class="btn btn-danger btn-sm"
-                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');"role="button">
-                            Hapus
-                        </button>
+                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');"
+                            role="button">Hapus</a>
                     </div>
                 </td>
             </tr>
