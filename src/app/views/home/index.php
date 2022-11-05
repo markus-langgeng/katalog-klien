@@ -212,13 +212,13 @@
                             <button type="button"
                                 class="btn btn-danger"
                                 data-bs-dismiss="modal">
-                                Close
+                                Tutup
                             </button>
 
                             <button type="submit"
                                 id="btnSubmitFormDataKlien"
                                 class="btn btn-primary">
-                                Create Data
+                                Tambahkan Data
                             </button>
                     </div>
                 </form>
