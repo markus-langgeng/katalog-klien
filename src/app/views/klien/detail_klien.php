@@ -102,7 +102,7 @@
         </table>
 
         <div class="container-fluid d-flex gap-2 mb-4">
-            <a href="<?= BASEURL ?>" class="btn btn-dangers ms-auto">Kembali</a>
+            <a href="<?= BASEURL ?>" class="btn btn-secondary ms-auto">Kembali</a>
             <button class="btn btn-primary">Edit</button>
         </div>
 

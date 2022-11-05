@@ -49,6 +49,7 @@
                             class="btn btn-danger btn-sm"
                             onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');"
                             role="button">Hapus</a>
+
                     </div>
                 </td>
             </tr>

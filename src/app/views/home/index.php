@@ -14,6 +14,12 @@
         <br>
 
         <div class="row mb-2">
+            <div class="col">
+            <?php Flasher::flash(); ?>
+            </div>
+        </div>
+
+        <div class="row mb-2">
             <h2 class="col">Data Klien</h2>
             <div class="container col d-flex justify-content-end">
                 <button

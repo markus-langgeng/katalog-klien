@@ -17,7 +17,7 @@ class Flasher
         if (isset($_SESSION["flash"])) {
             echo " <div class='alert alert-" .
                 $_SESSION["flash"]["tipe"] .
-                " alert-dismissible fade show' role='alert'> <strong>" .
+                " alert-dismissible fade show' role='alert'><strong>" .
                 $_SESSION["flash"]["pesan"] .
                 " " .
                 $_SESSION["flash"]["aksi"] .
