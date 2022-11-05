@@ -16,7 +16,7 @@ class Clients extends Controller
         $data["judul"] = "Detail";
 
         $data["detail_klien"] = $this->Model("ClientsModel")->getDetailsById(
-            $id
+            $id,
         );
 
         $this->view("template/header", $data);
@@ -40,5 +40,16 @@ class Clients extends Controller
             header('Location: ' . BASEURL );
             exit;
         }
+    }
+
+    public function getDetailToUpdate()
+    {
+        $dataKlien = $this->Model("ClientsModel")->getDetailsById($_POST["id"]);
+        echo json_encode($dataKlien);
+    }
+
+    public function edit()
+    {
+        $this->Model("ClientsModel")->ubahDataKlien($_POST);
     }
 }

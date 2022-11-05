@@ -34,9 +34,8 @@
             <tr>
                 <th scope="row">Domain Tujuan</th>
                 <td>
-                    <a href="<?= $data["detail_klien"]["permalink"] ?>">
-                        <?= $data["detail_klien"]["domain_tujuan"] ?>
-                    </a>
+                    <a href="<?= $data["detail_klien"]["domain_tujuan"] ?>">
+                        <?= $data["detail_klien"]["domain_tujuan"] ?></a>
                 </td>
             </tr>
 
@@ -44,8 +43,7 @@
                 <th scope="row">Permalink</th>
                 <td>
                     <a href="<?= $data["detail_klien"]["permalink"] ?>">
-                        <?= $data["detail_klien"]["permalink"] ?>
-                    </a>
+                        <?= $data["detail_klien"]["permalink"] ?></a>
                 </td>
             </tr>
 
@@ -73,8 +71,7 @@
                 <th scope="row">Link Invoice</th>
                 <td>
                     <a href="<?= $data["detail_klien"]["invoice_link"] ?>">
-                        <?= $data["detail_klien"]["invoice_link"] ?>
-                    </a>
+                        <?= $data["detail_klien"]["invoice_link"] ?></a>
                 </td>
             </tr>
 
@@ -100,12 +97,7 @@
 
             <tr>
                 <th scope="row">Catatan</th>
-                <td>
-                <textarea class="form-control"
-                    aria-label="Disabled input example"
-                    disabled><?= $data["detail_klien"]["note"] ?>
-                    </textarea>
-                </td>
+                <td><?= $data["detail_klien"]["note"] ?></td>
             </tr>
         </table>
 

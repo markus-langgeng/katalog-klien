@@ -15,7 +15,8 @@ class UsersModel
         $nama = $_POST["username"];
         $password = $_POST["password"];
 
-        $query = "SELECT * FROM " . $this->table . " WHERE username=:username";
+        $query =
+            "SELECT * FROM " . $this->table . " WHERE username = :username";
 
         $this->db->query($query);
         $this->db->bind("username", $nama);
@@ -33,7 +34,7 @@ class UsersModel
                     "Gagal",
                     "Login!",
                     "danger",
-                    "Username dan password tidak sesuai."
+                    "Username dan password tidak sesuai.",
                 );
                 header("Location: " . BASEURL . "/login");
                 exit();
@@ -43,7 +44,7 @@ class UsersModel
                 "Gagal",
                 "Login!",
                 "danger",
-                "Username tidak ditemukan."
+                "Username tidak ditemukan.",
             );
             header("Location: " . BASEURL . "/login");
             exit();
