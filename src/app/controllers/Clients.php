@@ -26,20 +26,12 @@ class Clients extends Controller
 
     public function tambah()
     {
-        $this->model('ClientsModel')->tambahdataklien($_POST);
+        $this->model("ClientsModel")->tambahDataKlien($_POST);
     }
 
     public function hapus($id)
     {
-        if( $this->model('ClientsModel')->hapusdataklien($id) > 0 )  {
-            Flasher::setFlash('Data Berhasil', 'Dihapus', 'success');
-            header('Location: ' . BASEURL );
-            exit;
-        } else {
-            Flasher::setFlash('Data Gagal', 'Dihapus', 'danger');
-            header('Location: ' . BASEURL );
-            exit;
-        }
+        $this->Model("ClientsModel")->hapusDataKlien($id);
     }
 
     public function getDetailToUpdate()

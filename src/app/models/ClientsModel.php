@@ -71,26 +71,35 @@ class ClientsModel
         $this->db->execute();
 
         $row = $this->db->rowCount();
-        if($row > 0 ){
-            Flasher::setFlash('Data Berhasil', 'Ditambahkan', 'success');
-            header('Location: ' . BASEURL );
-            exit;             
-        }else{
-            Flasher::setFlash('Data Gagal', 'Ditambahkan', 'danger');
-            header('Location: ' . BASEURL );
+        if ($row > 0) {
+            Flasher::setFlash("Data berhasil", "ditambahkan.", "success");
+            header("Location: " . BASEURL);
+            exit;
+        } else {
+            Flasher::setFlash("Data gagal", "ditambahkan.", "danger");
+            header("Location: " . BASEURL);
             exit;
         }
     }
 
-    public function hapusdataklien($id)
+    public function hapusDataKlien($id)
     {
         $query = "DELETE FROM " .$this->table." WHERE id = :id";
         $this->db->query($query);
-        $this->db->bind('id',$id);
+        $this->db->bind("id", $id);
 
         $this->db->execute();
 
-        return $this->db->rowCount();
+        $row =  $this->db->rowCount();
+        if ($row > 0) {
+            Flasher::setFlash("Data berhasil", "dihapus.", "success");
+            header("Location: " . BASEURL);
+            exit;
+        } else {
+            Flasher::setFlash("Data gagal", "dihapus.", "danger");
+            header("Location: " . BASEURL);
+            exit;
+        }
     }
 
     public function ubahDataKlien($data)
@@ -144,11 +153,11 @@ class ClientsModel
         $row = $this->db->rowCount();
 
         if ($row > 0) {
-            Flasher::setFlash("Data berhasil", "diedit!", "success");
+            Flasher::setFlash("Data berhasil", "diedit.", "success");
             header("Location: " . BASEURL);
             exit();
         } else {
-            Flasher::setFlash("Data gagal", "diedit!", "danger");
+            Flasher::setFlash("Data gagal", "diedit.", "danger");
             header("Location: " . BASEURL);
             exit();
         }
