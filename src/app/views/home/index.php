@@ -13,13 +13,7 @@
         <hr>
         <br>
 
-        <div class="row mb-2">
-            <div class="col">
-            <?php Flasher::flash(); ?>
-            </div>
-        </div>
-
-        <div class="row mb-2">
+        <div class="row mb-3">
             <h2 class="col">Data Klien</h2>
             <div class="container col d-flex justify-content-end">
                 <button
@@ -31,6 +25,30 @@
                 </button>
             </div>
         </div>
+
+        <div class="row mb-2">
+            <div class="col-lg-13 d-flex justify-content-end">
+                <form action="<?= BASEURL ?>/Clients/cari" method="post">
+
+                    <div class="input-group">
+                        <input type="text"
+                            class="form-control"
+                            placeholder="Cari Data Klien"
+                            name="keyword"
+                            id="keyword"
+                            autocomplete="off">
+
+                        <button class="btn btn-primary"
+                            type="submit"
+                            id="tombolCari">
+                            Cari
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
 
         <?php require_once "clients_table.php"; ?>
 

@@ -13,11 +13,10 @@ class Clients extends Controller
 
     public function detail($id)
     {
-        $data["judul"] = "Detail";
-
         $data["detail_klien"] = $this->Model("ClientsModel")->getDetailsById(
             $id,
         );
+        $data["judul"] = "Detail - " . $data["detail_klien"]["nama_client"];
 
         $this->view("template/header", $data);
         $this->view("klien/detail_klien", $data);
@@ -43,5 +42,15 @@ class Clients extends Controller
     public function edit()
     {
         $this->Model("ClientsModel")->ubahDataKlien($_POST);
+    }
+
+    public function cari()
+    {
+        $data["judul"] = "Cari Data";
+        $data["clients"] = $this->Model("ClientsModel")->cariDataKlien();
+
+        $this->view("template/header", $data);
+        $this->view("home/index", $data);
+        $this->view("template/footer");
     }
 }
