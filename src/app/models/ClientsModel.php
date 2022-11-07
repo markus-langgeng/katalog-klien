@@ -165,39 +165,6 @@ class ClientsModel
 
     public function cariDataKlien()
     {
-        // $term = $_POST["keyword"];
-
-        // var_dump(addslashes($keyword));
-        // $keyword = explode(" ", $keyword);
-
-        // function search_transform_term($m) {
-        //     var_dump($m);
-        //     return "oeauaeo" . $m[2];
-        // }
-
-        // function search_transform_term($term) {
-        //     var_dump($term);
-        //     $term = preg_replace_callback("/(\s)/", function($m) {
-        //         return "{WHITESPACE-" . ord($m[1]) . "}";
-        //     }, $term);
-        //     $term = preg_replace("/,/", "{COMMA}", $term);
-        //     var_dump($term);
-        //     // harus return string, bukan array?
-        //     return $term;
-        // }
-        //
-        // function search_split_terms($term)
-        // {
-        //     echo "$term\n";
-        //     $term = preg_replace_callback("/\"(.*?)\"/", "search_transform_term", $term);
-        //     $term = preg_split("/\s+|,/", $term);
-        //     return $term;
-        // }
-        // $keyword = search_split_terms($keyword);
-
-        // var_dump($keyword);
-
-        // var_dump($keyword);
         $term = $_POST["keyword"];
 
         $query = "SELECT * FROM " .

@@ -11,6 +11,7 @@
 
         <div class="row mb-3">
             <div class="my-3">
+
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
@@ -24,13 +25,20 @@
                                 Check list kolom yang ingin ditampilkan
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+
+                        <div id="collapseTwo"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
                             <div class="accordion-body">
+
                                 <?php require_once "check_list.php"; ?>
+
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="col-lg-13 d-flex flex-wrap gap-2">
@@ -44,7 +52,9 @@
                     </button>
                 </div>
 
-                <form class="col-md-3 ms-auto" action="<?= BASEURL ?>/Clients/cari" method="post">
+                    <form class="col-md-3 ms-auto"
+                        action="<?= BASEURL ?>/Clients/cari"
+                        method="POST">
 
                     <div class="input-group">
                         <input type="text"

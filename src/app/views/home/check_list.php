@@ -58,40 +58,6 @@
 
                 <div class="form-check col">
                     <input class="form-check-input" type="checkbox" value="" id="col-status-order" checked>
-allCheckBoxes.forEach(function(cb) {
-    let cellClass = cb.getAttribute("id");
-    let cells = d.querySelectorAll(`.client-table .${cellClass}`);
-
-    // evaluasi saat data pertama kali dimuat checkbox
-    // mana yang dicentang dan yang tidak
-    if(cb.checked == true) {
-        displayBlock(cells);
-    } else {
-        displayNone(cells);
-    }
-
-    // menambahkan eventListener supaya ada reaksi ketika
-    // checkbox dicentang dan dikosongkan
-    cb.addEventListener("click", function() {
-        if(cb.checked == true) {
-            displayBlock(cells);
-        } else {
-            displayNone(cells);
-        }
-    });
-});
-
-function displayBlock(cells) {
-    cells.forEach(function(cell) {
-        cell.style.display = "table-cell";
-    });
-}
-
-function displayNone(cells) {
-    cells.forEach(function(cell) {
-        cell.style.display = "none";
-    });
-}
                     <label class="form-check-label" for="col-status-order">
                         Status Order
                     </label>
