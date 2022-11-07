@@ -5,30 +5,46 @@
             <?php Flasher::flash(); ?>
         </div>
 
-        <h1>HALAMAN HOMEEEEEEEE</h1>
-        <p>Buat front end nya di sini (src/app/views/home/index.php)</p>
-        <p>Utk hlm login, ada di http://localhost/katalog-klien/public/login</p>
-        <p>Utk nulis css, js, dan gambar, ada di /katalog-klien/public/</p>
-
-        <hr>
-        <br>
-
         <div class="row mb-3">
-            <h2 class="col">Data Klien</h2>
-            <div class="container col d-flex justify-content-end">
-                <button
-                    id="btnTambahDataKlien"
-                    class="btn btn-primary d-inline-block align-self-end"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalDataKlien">
-                    Tambahkan Klien
-                </button>
-            </div>
+            <h1 class="col">Data Klien</h1>
         </div>
 
-        <div class="row mb-2">
-            <div class="col-lg-13 d-flex justify-content-end">
-                <form action="<?= BASEURL ?>/Clients/cari" method="post">
+        <div class="row mb-3">
+            <div class="my-3">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                Check list kolom yang ingin ditampilkan
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <?php require_once "check_list.php"; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-13 d-flex flex-wrap gap-2">
+                <div class="col-lg-6 d-flex">
+                    <button
+                        id="btnTambahDataKlien"
+                        class="btn btn-primary d-inline-block align-self-end"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalDataKlien">
+                        Tambahkan Klien
+                    </button>
+                </div>
+
+                <form class="col-md-3 ms-auto" action="<?= BASEURL ?>/Clients/cari" method="post">
 
                     <div class="input-group">
                         <input type="text"

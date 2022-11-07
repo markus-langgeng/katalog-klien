@@ -165,13 +165,66 @@ class ClientsModel
 
     public function cariDataKlien()
     {
-        $keyword = $_POST["keyword"];
-        $query =
-            "SELECT * FROM " .
+        // $term = $_POST["keyword"];
+
+        // var_dump(addslashes($keyword));
+        // $keyword = explode(" ", $keyword);
+
+        // function search_transform_term($m) {
+        //     var_dump($m);
+        //     return "oeauaeo" . $m[2];
+        // }
+
+        // function search_transform_term($term) {
+        //     var_dump($term);
+        //     $term = preg_replace_callback("/(\s)/", function($m) {
+        //         return "{WHITESPACE-" . ord($m[1]) . "}";
+        //     }, $term);
+        //     $term = preg_replace("/,/", "{COMMA}", $term);
+        //     var_dump($term);
+        //     // harus return string, bukan array?
+        //     return $term;
+        // }
+        //
+        // function search_split_terms($term)
+        // {
+        //     echo "$term\n";
+        //     $term = preg_replace_callback("/\"(.*?)\"/", "search_transform_term", $term);
+        //     $term = preg_split("/\s+|,/", $term);
+        //     return $term;
+        // }
+        // $keyword = search_split_terms($keyword);
+
+        // var_dump($keyword);
+
+        // var_dump($keyword);
+        $term = $_POST["keyword"];
+
+        $query = "SELECT * FROM " .
             $this->table .
-            " WHERE nama_client LIKE :keyword";
+            "
+            WHERE
+            nama_client LIKE :keyword
+            OR email_client LIKE :keyword
+            OR jenis_order LIKE :keyword
+            OR tgl_order LIKE :keyword
+            OR sumber_order LIKE :keyword
+            OR domain_tujuan LIKE :keyword
+            OR permalink LIKE :keyword
+            OR price LIKE :keyword
+            OR status_order LIKE :keyword
+            OR tgl_bayar LIKE :keyword
+            OR id_transaksi LIKE :keyword
+            OR invoice_link LIKE :keyword
+            OR acc_paypal_client LIKE :keyword
+            OR owner_domain LIKE :keyword
+            OR admin LIKE :keyword
+            OR glad LIKE :keyword
+            OR note LIKE :keyword
+            ";
         $this->db->query($query);
-        $this->db->bind("keyword", "%$keyword%");
+        $this->db->bind("keyword", "%$term%");
+        // var_dump($term);
         return $this->db->resultSet();
     }
 }
