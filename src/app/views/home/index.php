@@ -41,7 +41,7 @@
 
             </div>
 
-            <div class="col-lg-13 d-flex flex-wrap gap-2">
+            <div class="col-lg-13 d-flex flex-wrap gap-2 mb-3">
                 <div class="col-lg-6 d-flex">
                     <button
                         id="btnTambahDataKlien"
@@ -52,10 +52,7 @@
                     </button>
                 </div>
 
-                    <form class="col-md-3 ms-auto"
-                        action="<?= BASEURL ?>/Clients/cari"
-                        method="POST">
-
+                <div class="col-lg-4 d-flex ms-auto">
                     <div class="input-group">
                         <input type="text"
                             class="form-control"
@@ -70,10 +67,8 @@
                             Cari
                         </button>
                     </div>
-
-                </form>
+                </div>
             </div>
-        </div>
 
 
         <?php require_once "clients_table.php"; ?>

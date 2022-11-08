@@ -46,11 +46,13 @@ class Clients extends Controller
 
     public function cari()
     {
-        $data["judul"] = "Cari Data";
-        $data["clients"] = $this->Model("ClientsModel")->cariDataKlien();
-
-        $this->view("template/header", $data);
-        $this->view("home/index", $data);
-        $this->view("template/footer");
+        $data["clients"] = $this->Model("ClientsModel")->getClientsByKeyword(
+            $_POST["keyword"],
+        );
+        if ($data["clients"] == null) {
+            $this->view("home/search_not_found");
+        } else {
+            $this->view("home/clients_table", $data);
+        }
     }
 }

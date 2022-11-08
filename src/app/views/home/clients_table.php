@@ -1,4 +1,4 @@
-<div class="table-responsive">
+<div class="table-responsive" id="client-table-container">
     <table class="table table-hover table-striped table-bordered client-table">
 
         <thead class="align-top">
@@ -36,14 +36,18 @@
                 <td class="col-jenis-order"><?= $client["jenis_order"] ?></td>
                 <td class="col-tgl-order"><?= $client["tgl_order"] ?></td>
                 <td class="col-sumber-order"><?= $client["sumber_order"] ?></td>
-                <td class="col-domain-tujuan"><?= $client["domain_tujuan"] ?></td>
+                <td class="col-domain-tujuan"><?= $client[
+                    "domain_tujuan"
+                ] ?></td>
                 <td class="col-permalink"><?= $client["permalink"] ?></td>
                 <td class="col-harga"><?= $client["price"] ?></td>
                 <td class="col-status-order"><?= $client["status_order"] ?></td>
                 <td class="col-tgl-bayar"><?= $client["tgl_bayar"] ?></td>
                 <td class="col-id-transaksi"><?= $client["id_transaksi"] ?></td>
                 <td class="col-invoice-link"><?= $client["invoice_link"] ?></td>
-                <td class="col-akun-paypal-klien"><?= $client["acc_paypal_client"] ?></td>
+                <td class="col-akun-paypal-klien"><?= $client[
+                    "acc_paypal_client"
+                ] ?></td>
                 <td class="col-owner-domain"><?= $client["owner_domain"] ?></td>
                 <td class="col-admin"><?= $client["admin"] ?></td>
                 <td class="col-glad"><?= $client["glad"] ?></td>

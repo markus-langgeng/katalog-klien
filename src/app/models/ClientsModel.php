@@ -163,11 +163,12 @@ class ClientsModel
         }
     }
 
-    public function cariDataKlien()
+    public function getClientsByKeyword($keyword)
     {
-        $term = $_POST["keyword"];
+        $term = $keyword;
 
-        $query = "SELECT * FROM " .
+        $query =
+            "SELECT * FROM " .
             $this->table .
             "
             WHERE
@@ -191,7 +192,6 @@ class ClientsModel
             ";
         $this->db->query($query);
         $this->db->bind("keyword", "%$term%");
-        // var_dump($term);
         return $this->db->resultSet();
     }
 }
