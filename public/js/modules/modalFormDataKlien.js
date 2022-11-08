@@ -10,9 +10,8 @@ const formDataKlien = document.querySelector("#form_data_klien");
 const xhr = new XMLHttpRequest();
 
 function modalFormDataKlien() {
-
     // Tambah Data
-    addBtn.addEventListener("click", function() {
+    addBtn.addEventListener("click", function () {
         judulModal.innerHTML = "Tambah Data Klien";
         submitBtn.innerHTML = "Tambah Data";
         clearForm();
@@ -22,10 +21,12 @@ function modalFormDataKlien() {
     for (let i = 0; i < editBtn.length; i++) {
         editBtn[i].addEventListener("click", function () {
             let id = this.getAttribute("data-id-klien");
-            const urlAjax = "http://localhost/katalog-klien/public/clients/getDetailToUpdate";
-            const urlActionForm = "http://localhost/katalog-klien/public/clients/edit";
+            const urlAjax =
+                "http://localhost/katalog-klien/public/clients/getDetailToUpdate";
+            const urlActionForm =
+                "http://localhost/katalog-klien/public/clients/edit";
 
-            judulModal.innerHTML = "Edit Data Klien"
+            judulModal.innerHTML = "Edit Data Klien";
             submitBtn.innerHTML = "Edit Data";
             formDataKlien.setAttribute("action", urlActionForm);
 
@@ -36,9 +37,12 @@ function modalFormDataKlien() {
                 let response = JSON.parse(xhr.responseText);
 
                 prepopulateForm(response);
-            }
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.send("id="+id);
+            };
+            xhr.setRequestHeader(
+                "Content-Type",
+                "application/x-www-form-urlencoded"
+            );
+            xhr.send("id=" + id);
         });
     }
 }

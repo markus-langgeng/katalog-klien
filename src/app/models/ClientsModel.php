@@ -162,4 +162,36 @@ class ClientsModel
             exit();
         }
     }
+
+    public function getClientsByKeyword($keyword)
+    {
+        $term = $keyword;
+
+        $query =
+            "SELECT * FROM " .
+            $this->table .
+            "
+            WHERE
+            nama_client LIKE :keyword
+            OR email_client LIKE :keyword
+            OR jenis_order LIKE :keyword
+            OR tgl_order LIKE :keyword
+            OR sumber_order LIKE :keyword
+            OR domain_tujuan LIKE :keyword
+            OR permalink LIKE :keyword
+            OR price LIKE :keyword
+            OR status_order LIKE :keyword
+            OR tgl_bayar LIKE :keyword
+            OR id_transaksi LIKE :keyword
+            OR invoice_link LIKE :keyword
+            OR acc_paypal_client LIKE :keyword
+            OR owner_domain LIKE :keyword
+            OR admin LIKE :keyword
+            OR glad LIKE :keyword
+            OR note LIKE :keyword
+            ";
+        $this->db->query($query);
+        $this->db->bind("keyword", "%$term%");
+        return $this->db->resultSet();
+    }
 }
