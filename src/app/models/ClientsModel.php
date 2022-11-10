@@ -202,7 +202,6 @@ class ClientsModel
             }
             $query .= " WHERE " . implode(" OR ", $queryArr);
         }
-        echo $query;
 
         $this->db->query($query);
         $this->db->bind("keyword", "%$term%");
