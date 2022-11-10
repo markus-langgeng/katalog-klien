@@ -7,28 +7,34 @@ const toggleAllCols = d.querySelector("#checklist-toggle-semua");
 function toggleColumns() {
     toggleAllCheckboxes(toggleAllCols, allCheckBoxes);
 
-    allCheckBoxes.forEach(function (cb) {
-        let cellClass = cb.getAttribute("id");
-        let cells = d.querySelectorAll(`.client-table .${cellClass}`);
+    function checkStateOfCheckboxes() {
+        allCheckBoxes.forEach(function (cb) {
+            let cellClass = cb.getAttribute("id");
+            let cells = d.querySelectorAll(`.client-table .${cellClass}`);
 
-        // evaluasi saat data pertama kali dimuat checkbox
-        // mana yang dicentang dan yang tidak
-        if (cb.checked == true) {
-            displayBlock(cells);
-        } else {
-            displayNone(cells);
-        }
-
-        // menambahkan eventListener supaya ada reaksi ketika
-        // checkbox dicentang dan dikosongkan
-        cb.addEventListener("click", function () {
+            // evaluasi saat data pertama kali dimuat checkbox
+            // mana yang dicentang dan yang tidak
             if (cb.checked == true) {
                 displayBlock(cells);
             } else {
                 displayNone(cells);
             }
+
+            // menambahkan eventListener supaya ada reaksi ketika
+            // checkbox dicentang dan dikosongkan
+            cb.addEventListener("click", function () {
+                if (cb.checked == true) {
+                    displayBlock(cells);
+                } else {
+                    displayNone(cells);
+                }
+            });
         });
-    });
+    }
+
+    // panggil fungsi di awal hlm memuat pertama kali
+    checkStateOfCheckboxes();
+    toggleAllCols.addEventListener("click", checkStateOfCheckboxes);
 
     function displayBlock(cells) {
         cells.forEach(function (cell) {
