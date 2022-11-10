@@ -1,7 +1,12 @@
+import toggleAllCheckboxes from "./toggleAllCheckboxes.js";
+
 const d = document;
 const allCheckBoxes = d.querySelectorAll(".column-checkboxes [type=checkbox]");
+const toggleAllCols = d.querySelector("#checklist-toggle-semua");
 
 function toggleColumns() {
+    toggleAllCheckboxes(toggleAllCols, allCheckBoxes);
+
     allCheckBoxes.forEach(function (cb) {
         let cellClass = cb.getAttribute("id");
         let cells = d.querySelectorAll(`.client-table .${cellClass}`);

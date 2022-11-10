@@ -47,8 +47,9 @@ class Clients extends Controller
     public function cari()
     {
         $data["clients"] = $this->Model("ClientsModel")->getClientsByKeyword(
-            $_POST["keyword"],
+            $_POST["keyword"], $_POST["filter_array"]
         );
+
         if ($data["clients"] == null) {
             $this->view("home/search_not_found");
         } else {

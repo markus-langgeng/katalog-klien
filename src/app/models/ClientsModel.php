@@ -163,33 +163,47 @@ class ClientsModel
         }
     }
 
-    public function getClientsByKeyword($keyword)
+    public function getClientsByKeyword($keyword, $filter)
     {
+        $filter = explode(",", $filter);
         $term = $keyword;
 
-        $query =
-            "SELECT * FROM " .
-            $this->table .
-            "
-            WHERE
-            nama_client LIKE :keyword
-            OR email_client LIKE :keyword
-            OR jenis_order LIKE :keyword
-            OR tgl_order LIKE :keyword
-            OR sumber_order LIKE :keyword
-            OR domain_tujuan LIKE :keyword
-            OR permalink LIKE :keyword
-            OR price LIKE :keyword
-            OR status_order LIKE :keyword
-            OR tgl_bayar LIKE :keyword
-            OR id_transaksi LIKE :keyword
-            OR invoice_link LIKE :keyword
-            OR acc_paypal_client LIKE :keyword
-            OR owner_domain LIKE :keyword
-            OR admin LIKE :keyword
-            OR glad LIKE :keyword
-            OR note LIKE :keyword
-            ";
+        $query = "SELECT * FROM " . $this->table;
+        $queryArr = array();
+        // var_dump($filter);
+
+        if ( in_array("", $filter, true) ) {
+            $query =
+                "SELECT * FROM " .
+                $this->table .
+                "
+                WHERE
+                nama_client LIKE :keyword
+                OR email_client LIKE :keyword
+                OR jenis_order LIKE :keyword
+                OR tgl_order LIKE :keyword
+                OR sumber_order LIKE :keyword
+                OR domain_tujuan LIKE :keyword
+                OR permalink LIKE :keyword
+                OR price LIKE :keyword
+                OR status_order LIKE :keyword
+                OR tgl_bayar LIKE :keyword
+                OR id_transaksi LIKE :keyword
+                OR invoice_link LIKE :keyword
+                OR acc_paypal_client LIKE :keyword
+                OR owner_domain LIKE :keyword
+                OR admin LIKE :keyword
+                OR glad LIKE :keyword
+                OR note LIKE :keyword
+                ";
+        } else {
+            foreach ($filter as $key => $val) {
+                $queryArr[] = $val . " LIKE :keyword ";
+            }
+            $query .= " WHERE " . implode(" OR ", $queryArr);
+        }
+        echo $query;
+
         $this->db->query($query);
         $this->db->bind("keyword", "%$term%");
         return $this->db->resultSet();
