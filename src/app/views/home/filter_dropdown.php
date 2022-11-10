@@ -154,7 +154,7 @@
             <input class="form-check-input" id="filter-acc-paypal-klien"
                 type="checkbox"
                 name="filter"
-                value="acc_paypal_klien">
+                value="acc_paypal_client">
             <label class="form-check-label" for="filter-acc-paypal-klien">
                 Akun PayPal Klien
             </label>
