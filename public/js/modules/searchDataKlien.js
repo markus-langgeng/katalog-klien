@@ -5,7 +5,7 @@ const d = document;
 
 const searchBtn = d.querySelector("#tombolCari");
 const searchInput = d.querySelector("#keyword");
-const chkAll = d.querySelector("#filter-toggle-semua")
+const chkAll = d.querySelector("#filter-toggle-semua");
 const clientTable = d.querySelector("#client-table-container");
 
 const filterCol = d.querySelectorAll("[name=filter]");
@@ -13,7 +13,6 @@ const filterCol = d.querySelectorAll("[name=filter]");
 const xhr = new XMLHttpRequest();
 
 function searchDataKlien() {
-
     toggleAllCheckboxes(chkAll, filterCol);
 
     function searchWithAjax() {
@@ -21,7 +20,7 @@ function searchDataKlien() {
         let cbFilterArr = [];
 
         filterCol.forEach(function (cb) {
-            if( cb.checked == true ) {
+            if (cb.checked == true) {
                 cbFilterArr.push(cb.value);
             }
         });
@@ -50,7 +49,6 @@ function searchDataKlien() {
     searchInput.addEventListener("keyup", function () {
         searchWithAjax();
     });
-
 }
 
 export default searchDataKlien;

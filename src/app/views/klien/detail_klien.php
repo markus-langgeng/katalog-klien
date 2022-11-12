@@ -1,3 +1,4 @@
+<?php LoginSession::checkLoginSession($data["judul"]); ?>
 <main>
     <div class="container">
 
@@ -103,7 +104,6 @@
 
         <div class="container-fluid d-flex gap-2 mb-4">
             <a href="<?= BASEURL ?>" class="btn btn-secondary ms-auto">Kembali</a>
-            <button class="btn btn-primary">Edit</button>
         </div>
 
     </div>

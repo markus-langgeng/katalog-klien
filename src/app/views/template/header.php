@@ -14,8 +14,8 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="container">
 
-                    <a class="navbar-brand" href="<?= BASEURL ?>"><b>Katalog Klien</b></a>
-                        <button class="navbar-toggler" type="button"
+                    <a class="navbar-brand fw-bold" href="<?= BASEURL ?>">Katalog Klien</a>
+                    <button class="navbar-toggler" type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#navbarNav"
                             aria-controls="navbarNav"
@@ -25,7 +25,8 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav flex-grow-1">
+                            <?php if ($data["judul"] != "Login"): ?>
                             <li class="nav-item">
                                 <a class="nav-link active"
                                         aria-current="page"
@@ -34,6 +35,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Data Semua Klien</a>
                             </li>
+                            <li class="nav-item ms-lg-auto">
+                                <a class="nav-link btn btn-light text-dark"
+                                    role="button"
+                                    href="<?= BASEURL ?>/logout">Logout</a>
+                            </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
 

@@ -27,7 +27,8 @@ class UsersModel
         if ($user) {
             if ($password == $user["password"]) {
                 Flasher::setFlash("Berhasil", "Login!", "success");
-                header("Location: " . BASEURL . "/home");
+                LoginSession::setLoginSession($user["username"]);
+                header("Location: " . BASEURL);
                 exit();
             } else {
                 Flasher::setFlash(

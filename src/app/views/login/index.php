@@ -1,12 +1,12 @@
+<?php LoginSession::checkLoginSession($data["judul"]); ?>
 <main>
     <div class="container">
 
         <h1 class="text-center my-5">Login</h1>
         <div class="container-fluid">
 
-            <div class="row justify-content-center">
-                <form method="POST" action="<?= BASEURL ?>/login/auth"
-                    class="col col-4 bg-light border border-secondary rounded p-lg-5">
+            <div class="row col-md-8 col-lg-4 mx-auto">
+                <form class="d-flex flex-column" method="POST" action="<?= BASEURL ?>/login/auth">
 
                     <div class="mb-3">
                         <label for="username" class="form-label">
@@ -35,7 +35,7 @@
                     <button
                         type="submit"
                         name="submit"
-                        class="btn btn-primary">Login</button>
+                        class="btn btn-primary  ms-md-auto">Login</button>
                 </form>
             </div>
 

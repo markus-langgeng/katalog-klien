@@ -1,4 +1,5 @@
-<main>
+<?php LoginSession::checkLoginSession($data["judul"]); ?>
+<main class="home-page">
     <div class="container">
 
         <div class="row mt-3">
@@ -55,7 +56,7 @@
                 </div>
 
                 <div class="ms-auto me-md-2">
-                    <?php require_once "filter_dropdown.php" ?>
+                    <?php require_once "filter_dropdown.php"; ?>
                 </div>
                 <div class="mb-3">
                     <div class="input-group">
@@ -80,6 +81,6 @@
         <?php require_once "clients_table.php"; ?>
 
     </div>
-        <?php require_once "modal_form.php" ?>
+        <?php require_once "modal_form.php"; ?>
 
 </main>

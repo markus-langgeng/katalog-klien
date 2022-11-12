@@ -169,10 +169,10 @@ class ClientsModel
         $term = $keyword;
 
         $query = "SELECT * FROM " . $this->table;
-        $queryArr = array();
+        $queryArr = [];
         // var_dump($filter);
 
-        if ( in_array("", $filter, true) ) {
+        if (in_array("", $filter, true)) {
             $query =
                 "SELECT * FROM " .
                 $this->table .

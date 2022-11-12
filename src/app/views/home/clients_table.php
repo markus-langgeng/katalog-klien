@@ -51,7 +51,7 @@
                 <td class="col-owner-domain"><?= $client["owner_domain"] ?></td>
                 <td class="col-admin"><?= $client["admin"] ?></td>
                 <td class="col-glad"><?= $client["glad"] ?></td>
-                <td class="col-note"><?= $client["note"] ?></td>
+                <td class="col-note m"><?= $client["note"] ?></td>
                 <td>
                     <div class="d-grid gap-2">
                         <a href="<?= BASEURL ?>/clients/detail/
