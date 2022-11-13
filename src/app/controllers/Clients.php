@@ -11,7 +11,7 @@ class Clients extends Controller
         $this->view("template/footer");
     }
 
-    public function detail($id)
+    public function detail($id = 1)
     {
         $data["detail_klien"] = $this->Model("ClientsModel")->getDetailsById(
             $id,
@@ -46,11 +46,19 @@ class Clients extends Controller
 
     public function cari()
     {
-        $data["clients"] = $this->Model("ClientsModel")->getClientsByKeyword(
-            $_POST["keyword"], $_POST["filter_array"]
-        );
 
-        if ($data["clients"] == null) {
+        // klo keyword lagi kosong, panggil semua
+        // klien seperti saat memuat halaman pertama kali.
+        if ( empty($_POST["keyword"]) ) {
+            $data["clients"] = $this->Model("ClientsModel")->getAllClients();
+        } else {
+            $data["clients"] = $this->Model("ClientsModel")->getClientsByKeyword(
+                $_POST["keyword"],
+                $_POST["filter_array"],
+            );
+        }
+
+        if ($data["clients"]["klien"] == null) {
             $this->view("home/search_not_found");
         } else {
             $this->view("home/clients_table", $data);
