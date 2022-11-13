@@ -10,10 +10,28 @@ class ClientsModel
         $this->db = new Database();
     }
 
-    public function getAllClients()
+    public function getAllClients($hlmAktif = 1)
     {
-        $this->db->query("SELECT * FROM " . $this->table);
-        return $this->db->resultSet();
+        $dataPerHlm = 2;
+        // rumus dari webunpas awokwokowk, aku ga usah mikir
+        $indexAwal = $dataPerHlm * $hlmAktif - $dataPerHlm;
+
+        $rowsTotal = $this->db->query("SELECT * FROM {$this->table}");
+        $rowsTotal = $this->db->resultSet();
+        $rowsTotal = $this->db->rowCount($rowsTotal);
+        $jmlHlm = ceil($rowsTotal / $dataPerHlm);
+
+        $this->db->query(
+            "SELECT * FROM {$this->table} LIMIT {$indexAwal}, {$dataPerHlm}",
+        );
+
+        // return semua datanya dan data utk pagination ke controller
+        $rows["klien"] = $this->db->resultSet();
+        $rows["jmlHlm"] = $jmlHlm;
+        $rows["indexAwal"] = $indexAwal;
+        $rows["hlmAktif"] = $hlmAktif;
+
+        return $rows;
     }
 
     public function getDetailsById($id)
@@ -170,7 +188,6 @@ class ClientsModel
 
         $query = "SELECT * FROM " . $this->table;
         $queryArr = [];
-        // var_dump($filter);
 
         if (in_array("", $filter, true)) {
             $query =
@@ -205,6 +222,7 @@ class ClientsModel
 
         $this->db->query($query);
         $this->db->bind("keyword", "%$term%");
-        return $this->db->resultSet();
+        $rows["klien"] = $this->db->resultSet();
+        return $rows;
     }
 }

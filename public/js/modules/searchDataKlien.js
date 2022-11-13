@@ -7,6 +7,7 @@ const searchBtn = d.querySelector("#tombolCari");
 const searchInput = d.querySelector("#keyword");
 const chkAll = d.querySelector("#filter-toggle-semua");
 const clientTable = d.querySelector("#client-table-container");
+const bsPagination = d.querySelector("[aria-label='Page navigation']");
 
 const filterCol = d.querySelectorAll("[name=filter]");
 
@@ -16,8 +17,17 @@ function searchDataKlien() {
     toggleAllCheckboxes(chkAll, filterCol);
 
     function searchWithAjax() {
-        let keyword = document.querySelector("#keyword").value;
+        let keyword = searchInput.value;
         let cbFilterArr = [];
+
+        // jangan tampilkan pagination saat melakukan pencarian
+        // karena link yang dituju masih sama seperti sblm melakukan pencarian
+        // pagination yg link"-nya sesuai data yg dicari masih belum didukung :v
+        if (keyword.length === 0) {
+            bsPagination.style.display = "block";
+        } else {
+            bsPagination.style.display = "none";
+        }
 
         filterCol.forEach(function (cb) {
             if (cb.checked == true) {

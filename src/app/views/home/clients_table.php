@@ -1,4 +1,4 @@
-<div class="table-responsive" id="client-table-container">
+<div class="table-responsive mb-4" id="client-table-container">
     <table class="table table-hover table-striped table-bordered client-table">
 
         <thead class="align-top">
@@ -26,8 +26,8 @@
         </thead>
 
     <?php
-    $no = 1;
-    foreach ($data["clients"] as $client): ?>
+    $no = ( isset($data["clients"]["indexAwal"]) ) ? $no = $data["clients"]["indexAwal"] + 1 : $no = 1;
+    foreach ($data["clients"]["klien"] as $client): ?>
 
             <tr>
                 <th scope="row"><?= $no ?></th>

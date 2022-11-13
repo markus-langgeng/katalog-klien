@@ -79,6 +79,7 @@
 
 
         <?php require_once "clients_table.php"; ?>
+        <?php require_once "paginiaton.php"; ?>
 
     </div>
         <?php require_once "modal_form.php"; ?>
