@@ -12,7 +12,7 @@ class ClientsModel
 
     public function getAllClients($hlmAktif = 1)
     {
-        $dataPerHlm = 2;
+        $dataPerHlm = 5;
         // rumus dari webunpas awokwokowk, aku ga usah mikir
         $indexAwal = $dataPerHlm * $hlmAktif - $dataPerHlm;
 

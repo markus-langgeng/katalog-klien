@@ -32,9 +32,6 @@
                                         aria-current="page"
                                         href="<?= BASEURL ?>">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Data Semua Klien</a>
-                            </li>
                             <li class="nav-item ms-lg-auto">
                                 <a class="nav-link btn btn-light text-dark"
                                     role="button"
