@@ -4,7 +4,7 @@ class User extends Controller
 {
     public function index()
     {
-        $data["judul"] = "Info User";
+        $data["judul"] = "User";
 
         $this->view("template/header", $data);
         $this->view("user/index", $data);

@@ -29,12 +29,20 @@
                             <?php if ($data["judul"] != "Login"): ?>
 
                             <li class="nav-item">
-                                <a class="nav-link"
+                                <a class="nav-link <?php echo $data[
+                                    "judul"
+                                ] == "Home"
+                                    ? "active"
+                                    : ""; ?>"
                                         href="<?= BASEURL ?>">Home</a>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle"
+                                <a class="nav-link <?php echo $data[
+                                    "judul"
+                                ] == "User"
+                                    ? "active"
+                                    : ""; ?>"
                                         role="button"
                                         data-bs-toggle="dropdown"
                                         aria-expanded="true"
@@ -52,12 +60,6 @@
                                     </li>
                                 </ul>
                             </li>
-
-                            <!-- <li class="nav-item ms-lg-auto"> -->
-                            <!--     <a class="nav-link btn btn-light text-dark" -->
-                            <!--         role="button" -->
-                            <!--         href="<?//= BASEURL ?>/logout">Logout</a> -->
-                            <!-- </li> -->
 
                             <?php endif; ?>
                         </ul>
