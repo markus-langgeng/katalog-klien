@@ -10,24 +10,31 @@ class UsersModel
         $this->db = new Database();
     }
 
-    public function validate()
+    public function validate($data)
     {
-        $nama = $_POST["username"];
-        $password = $_POST["password"];
+        if ( $data["username"] === "" || $data["password"] === "" ) {
+            Flasher::setFlash(
+                "Gagal",
+                "Login!",
+                "danger",
+                "Semua kolom harus terisi.",
+            );
+            header("Location: " . BASEURL . "/user");
+            exit();
+        }
 
-        $query =
-            "SELECT * FROM " . $this->table . " WHERE username = :username";
+        $username = $data["username"];
+        $password = $data["password"];
 
-        $this->db->query($query);
-        $this->db->bind("username", $nama);
-        $this->db->single();
-
-        $user = $this->db->single();
+        $user = $this->getUserData($username);
 
         if ($user) {
-            if ($password == $user["password"]) {
+            if (password_verify($password, $user["password"])) {
                 Flasher::setFlash("Berhasil", "Login!", "success");
-                LoginSession::setLoginSession($user["username"]);
+                LoginSession::setLoginSession(
+                    $user["username"],
+                    $user["password"],
+                );
                 header("Location: " . BASEURL);
                 exit();
             } else {
@@ -48,6 +55,71 @@ class UsersModel
                 "Username tidak ditemukan.",
             );
             header("Location: " . BASEURL . "/login");
+            exit();
+        }
+    }
+
+    public function getUserData($username)
+    {
+        $query = "SELECT * FROM {$this->table} WHERE username = :username";
+
+        $this->db->query($query);
+        $this->db->bind("username", $username);
+        $this->db->execute();
+        return $this->db->single();
+    }
+
+    public function updateUserData($data)
+    {
+
+        if (
+            $data["username"] === "" ||
+            $data["password"] === "" ||
+            $data["password2"] === ""
+        ) {
+            Flasher::setFlash(
+                "Data user gagal",
+                "diupdate.",
+                "danger",
+                "Semua kolom harus terisi.",
+            );
+            header("Location: " . BASEURL . "/user");
+            exit();
+        }
+
+        if ($data["password"] !== $data["password2"]) {
+            Flasher::setFlash(
+                "Data user gagal",
+                "diupdate.",
+                "danger",
+                "Password dan konfirmasi password tidak sama.",
+            );
+            header("Location: " . BASEURL . "/user");
+            exit();
+        }
+
+        $username = $data["username"];
+        $password = $data["password"];
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
+        $query = "UPDATE {$this->table} SET
+        username = :newUsername,
+        password = :password
+        WHERE username = :oldUsername";
+
+        $this->db->query($query);
+        $this->db->bind("newUsername", $username);
+        $this->db->bind("password", $password);
+        $this->db->bind("oldUsername", $_SESSION["userData"]["nama"]);
+        $this->db->execute();
+
+        $row = $this->db->rowCount();
+        if ($row > 0) {
+            header("Location: " . BASEURL . "/logout");
+            exit();
+        } else {
+            Flasher::setFlash("Data user gagal", "diupdate.", "danger");
+            header("Location: " . BASEURL . "/user");
             exit();
         }
     }

@@ -23,14 +23,4 @@ class Home extends Controller
         $this->view("template/footer");
     }
 
-    /* public function page() */
-    /* { */
-    /*     var_dump($_GET["page"]); */
-    /*     $noHlm = $_GET["page"];  */
-    /*     $data["judul"] = "Home";  */
-    /*  */
-    /*     $this->view("home/clients_table", $data);  */
-    /*     var_dump($hlmAktif);  */
-    /*     echo __METHOD__;  */
-    /* } */
 }

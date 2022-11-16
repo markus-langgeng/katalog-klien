@@ -4,10 +4,10 @@ class LoginSession
 {
     public static function setLoginSession($nama)
     {
-        $_SESSION["userData"] = ["nama" => $nama];
+        $_SESSION["userData"]["nama"] = $nama;
     }
 
-    public static function checkLoginSession($judul)
+    public static function checkLoginSession($judul = "")
     {
         if (isset($_SESSION["userData"])) {
             if ($judul == "Login") {
