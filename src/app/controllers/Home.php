@@ -22,5 +22,4 @@ class Home extends Controller
         $this->view("home/index", $data);
         $this->view("template/footer");
     }
-
 }

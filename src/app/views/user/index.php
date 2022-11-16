@@ -8,7 +8,7 @@
                 <div class="card-text">
                     <p>
                         <span class="fw-bold">Username :</span>
-                        <?= $_SESSION["userData"]["nama"]; ?>
+                        <?= $_SESSION["userData"]["nama"] ?>
                     </p>
                 </div>
                 <div class="d-flex">
