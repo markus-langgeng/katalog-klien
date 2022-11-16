@@ -54,13 +54,12 @@ class Clients extends Controller
 
         // klo keyword lagi kosong, panggil semua
         // klien seperti saat memuat halaman pertama kali.
-        if ( $_POST["keyword"] === "" ) {
+        if ($_POST["keyword"] === "") {
             $data["clients"] = $this->Model("ClientsModel")->getAllClients();
         } else {
-            $data["clients"] = $this->Model("ClientsModel")->getClientsByKeyword(
-                $_POST["keyword"],
-                $_POST["filter_array"],
-            );
+            $data["clients"] = $this->Model(
+                "ClientsModel",
+            )->getClientsByKeyword($_POST["keyword"], $_POST["filter_array"]);
         }
 
         if ($data["clients"]["klien"] == null) {

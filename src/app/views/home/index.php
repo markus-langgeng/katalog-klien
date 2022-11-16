@@ -92,10 +92,10 @@
                     </div>
                     <div class="modal-body">
                         <p>
-                            Username : <?= $_SESSION["userData"]["nama"]; ?>
+                            Username : <?= $_SESSION["userData"]["nama"] ?>
                         </p>
                         <p>
-                            Password : <?= $_SESSION["userData"]["password"]; ?>
+                            Password : <?= $_SESSION["userData"]["password"] ?>
                         </p>
                     </div>
                     <div class="modal-footer">

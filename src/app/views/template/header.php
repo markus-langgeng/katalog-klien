@@ -29,8 +29,7 @@
                             <?php if ($data["judul"] != "Login"): ?>
 
                             <li class="nav-item">
-                                <a class="nav-link active"
-                                        aria-current="page"
+                                <a class="nav-link"
                                         href="<?= BASEURL ?>">Home</a>
                             </li>
 

@@ -12,7 +12,7 @@ class UsersModel
 
     public function validate($data)
     {
-        if ( $data["username"] === "" || $data["password"] === "" ) {
+        if ($data["username"] === "" || $data["password"] === "") {
             Flasher::setFlash(
                 "Gagal",
                 "Login!",
@@ -71,7 +71,6 @@ class UsersModel
 
     public function updateUserData($data)
     {
-
         if (
             $data["username"] === "" ||
             $data["password"] === "" ||

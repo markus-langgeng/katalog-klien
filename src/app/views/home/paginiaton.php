@@ -6,7 +6,7 @@ $indexAwal = $data["clients"]["indexAwal"];
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
 
-            <?php if ($hlmAktif > 1) : ?>
+            <?php if ($hlmAktif > 1): ?>
             <li class="page-item">
                 <a class="page-link"
                     href="1">
@@ -22,15 +22,15 @@ $indexAwal = $data["clients"]["indexAwal"];
             </li>
             <?php endif; ?>
 
-            <?php for ($i = 1; $i <= $jmlHlm; $i++) : ?>
+            <?php for ($i = 1; $i <= $jmlHlm; $i++): ?>
 
-                <?php if ($i == $hlmAktif) : ?>
+                <?php if ($i == $hlmAktif): ?>
 
                 <li class="page-item">
                     <a class="page-link active"
                         aria-current="page"
                         href="<?= $i ?>">
-                        <?= $i; ?>
+                        <?= $i ?>
                     </a>
                 </li>
 
@@ -38,14 +38,14 @@ $indexAwal = $data["clients"]["indexAwal"];
 
                 <li class="page-item">
                     <a class="page-link" href="<?= $i ?>">
-                        <?= $i; ?>
+                        <?= $i ?>
                     </a>
                 </li>
 
                 <?php endif; ?>
             <?php endfor; ?>
 
-            <?php if ($hlmAktif < $jmlHlm) : ?>
+            <?php if ($hlmAktif < $jmlHlm): ?>
             <li class="page-item">
                 <a class="page-link"
                     href="<?= $hlmAktif + 1 ?>"
