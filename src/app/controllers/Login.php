@@ -14,6 +14,7 @@ class Login extends Controller
 
     public function auth()
     {
-        $this->Model("UsersModel")->validate();
+        LoginSession::checkLoginSession();
+        $this->Model("UsersModel")->validate($_POST);
     }
 }
