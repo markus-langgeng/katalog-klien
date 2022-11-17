@@ -1,8 +1,6 @@
 const navLinks = document.querySelectorAll(".nav-link");
 
 function changeActiveState() {
-
-    console.log(navLinks);
     navLinks.forEach(function (link) {
         let activeLink = document.querySelector(".nav-link.active");
 
@@ -13,7 +11,6 @@ function changeActiveState() {
             link.setAttribute("aria-current", "page");
         });
     });
-
 }
 
 export default changeActiveState;
