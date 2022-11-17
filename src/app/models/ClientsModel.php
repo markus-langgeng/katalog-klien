@@ -22,7 +22,7 @@ class ClientsModel
         $jmlHlm = ceil($rowsTotal / $dataPerHlm);
 
         $this->db->query(
-            "SELECT * FROM {$this->table} LIMIT {$indexAwal}, {$dataPerHlm}",
+            "SELECT * FROM {$this->table} ORDER BY id DESC LIMIT {$indexAwal}, {$dataPerHlm}",
         );
 
         // return semua datanya dan data utk pagination ke controller

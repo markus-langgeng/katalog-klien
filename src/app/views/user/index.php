@@ -34,7 +34,7 @@
                     <div class="row mb-3">
                         <label for="username"
                             class="col-form-label col-sm-4">
-                            Username :
+                            Username baru :
                         </label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control"
@@ -47,7 +47,7 @@
                     <div class="row mb-3">
                         <label for="password"
                             class="col-form-label col-sm-4">
-                            Password :
+                            Password baru :
                         </label>
                         <div class="col-sm-8">
                             <input type="password" class="form-control"

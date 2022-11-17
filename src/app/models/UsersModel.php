@@ -97,7 +97,7 @@ class UsersModel
             exit();
         }
 
-        $username = $data["username"];
+        $username = strtolower(stripslashes($data["username"]));
         $password = $data["password"];
         $password = password_hash($password, PASSWORD_DEFAULT);
 
