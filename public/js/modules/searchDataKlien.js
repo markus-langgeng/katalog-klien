@@ -6,7 +6,7 @@ const d = document;
 const searchBtn = d.querySelector("#tombolCari");
 const searchInput = d.querySelector("#keyword");
 const chkAll = d.querySelector("#filter-toggle-semua");
-const clientTable = d.querySelector("#client-table-container");
+const clientTable = d.querySelector("#client-table");
 const bsPagination = d.querySelector("[aria-label='Page navigation']");
 
 const filterCol = d.querySelectorAll("[name=filter]");

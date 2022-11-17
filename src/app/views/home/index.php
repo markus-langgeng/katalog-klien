@@ -78,7 +78,10 @@
             </div>
 
 
+        <div class="table-responsive mb-4" id="client-table-container">
         <?php require_once "clients_table.php"; ?>
+        </div>
+
         <?php require_once "paginiaton.php"; ?>
 
     </div>

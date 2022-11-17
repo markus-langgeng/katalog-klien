@@ -1,5 +1,4 @@
-<div class="table-responsive mb-4" id="client-table-container">
-    <table class="table table-hover table-striped table-bordered client-table">
+    <table id="client-table" class="table table-hover table-striped table-bordered client-table">
 
         <thead class="align-top">
             <tr>
@@ -82,5 +81,4 @@
     <?php $no++;endforeach;
     ?>
     </table>
-</div>
 

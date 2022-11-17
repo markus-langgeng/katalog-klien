@@ -9,7 +9,9 @@ const checkboxState = JSON.parse(localStorage.getItem("checkboxState"));
 
 function storeCheckboxState() {
     function loadCbFromLocalStorage() {
-        if(checkboxState === null) {return};
+        if (checkboxState === null) {
+            return;
+        }
 
         allCheckBoxes.forEach(function (cb) {
             cb.checked = checkboxState[cb.getAttribute("id")];
