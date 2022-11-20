@@ -49,7 +49,7 @@ if ($tot_hlm <= $limit + 1) { // ngga cukup bnyk halamannya; ga perlu dipisah"
         }
     }
 
-    if ($hlm_aktif <= $tot_hlm - ($limit - 1)) {
+    if ($hlm_aktif <= $tot_hlm - ($limit - 1) || $hlm_aktif < $limit) {
         $pagination .= $dot_pages;
         $pagination .= $last_page;
     }
