@@ -77,14 +77,19 @@
                 </div>
             </div>
 
+            <div class="d-md-flex">
+            <?php require_once "pagination.php"; echo $pagination;?>
+            </div>
 
-        <div class="table-responsive mb-4" id="client-table-container">
-        <?php require_once "clients_table.php"; ?>
+            <div class="table-responsive mb-4" id="client-table-container">
+            <?php require_once "clients_table.php"; ?>
+            </div>
+
+            <div class="d-md-flex">
+            <?php echo $pagination;?>
+            </div>
         </div>
 
-        <?php require_once "paginiaton.php"; ?>
-
-    </div>
         <?php require_once "modal_form.php"; ?>
         <div class="modal fade" id="modalUserProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">

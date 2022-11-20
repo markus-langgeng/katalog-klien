@@ -10,26 +10,26 @@ class ClientsModel
         $this->db = new Database();
     }
 
-    public function getAllClients($hlmAktif = 1)
+    public function getAllClients($hlm_aktif = 1)
     {
-        $dataPerHlm = 5;
+        $data_per_hlm = 5;
         // rumus dari webunpas awokwokowk, aku ga usah mikir
-        $indexAwal = $dataPerHlm * $hlmAktif - $dataPerHlm;
+        $index_awal = $data_per_hlm * $hlm_aktif - $data_per_hlm;
 
-        $rowsTotal = $this->db->query("SELECT * FROM {$this->table}");
-        $rowsTotal = $this->db->resultSet();
-        $rowsTotal = $this->db->rowCount($rowsTotal);
-        $jmlHlm = ceil($rowsTotal / $dataPerHlm);
+        $rows_total = $this->db->query("SELECT * FROM {$this->table}");
+        $rows_total = $this->db->resultSet();
+        $rows_total = $this->db->rowCount($rows_total);
+        $tot_hlm = ceil($rows_total / $data_per_hlm);
 
         $this->db->query(
-            "SELECT * FROM {$this->table} ORDER BY id DESC LIMIT {$indexAwal}, {$dataPerHlm}",
+            "SELECT * FROM {$this->table} ORDER BY id DESC LIMIT {$index_awal}, {$data_per_hlm}",
         );
 
         // return semua datanya dan data utk pagination ke controller
         $rows["klien"] = $this->db->resultSet();
-        $rows["jmlHlm"] = $jmlHlm;
-        $rows["indexAwal"] = $indexAwal;
-        $rows["hlmAktif"] = $hlmAktif;
+        $rows["tot_hlm"] = $tot_hlm;
+        $rows["index_awal"] = $index_awal;
+        $rows["hlm_aktif"] = $hlm_aktif;
 
         return $rows;
     }
