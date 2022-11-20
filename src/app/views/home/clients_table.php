@@ -25,8 +25,8 @@
         </thead>
 
     <?php
-    $no = isset($data["clients"]["indexAwal"])
-        ? ($no = $data["clients"]["indexAwal"] + 1)
+    $no = isset($data["clients"]["index_awal"])
+        ? ($no = $data["clients"]["index_awal"] + 1)
         : ($no = 1);
     foreach ($data["clients"]["klien"] as $client): ?>
 
