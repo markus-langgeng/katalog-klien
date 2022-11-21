@@ -7,7 +7,7 @@ const searchBtn = d.querySelector("#tombolCari");
 const searchInput = d.querySelector("#keyword");
 const chkAll = d.querySelector("#filter-toggle-semua");
 const clientTable = d.querySelector("#client-table");
-const bsPagination = d.querySelector("[aria-label='Page navigation']");
+const bsPagination = d.querySelectorAll("[aria-label='Page navigation']");
 
 const filterCol = d.querySelectorAll("[name=filter]");
 
@@ -24,9 +24,13 @@ function searchDataKlien() {
         // karena link yang dituju masih sama seperti sblm melakukan pencarian
         // pagination yg link"-nya sesuai data yg dicari masih belum didukung :v
         if (keyword.length === 0) {
-            bsPagination.style.display = "block";
+            bsPagination.forEach( (pagination) => {
+                pagination.style.display = "block";
+            });
         } else {
-            bsPagination.style.display = "none";
+            bsPagination.forEach( (pagination) => {
+                pagination.style.display = "none";
+            });
         }
 
         filterCol.forEach(function (cb) {
