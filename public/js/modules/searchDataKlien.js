@@ -57,11 +57,23 @@ function searchDataKlien() {
     }
 
     searchBtn.addEventListener("click", function () {
-        searchWithAjax();
+        let currUrl = window.location.href;
+        if(searchInput.value.length === 0) {
+            window.location.href = currUrl;
+        } else {
+            searchWithAjax();
+        }
     });
 
-    searchInput.addEventListener("keyup", function () {
-        searchWithAjax();
+    searchInput.addEventListener("keyup", function (e) {
+        let currUrl = window.location.href;
+        if(searchInput.value.length === 0) {
+            if(e.key == "Backspace" || e.key == "Delete") {
+                window.location.href = currUrl;
+            }
+        } else {
+            searchWithAjax();
+        }
     });
 }
 
