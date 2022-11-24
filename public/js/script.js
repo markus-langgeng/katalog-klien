@@ -3,6 +3,7 @@ import toggleColumns from "./modules/toggleColumns.js";
 import searchDataKlien from "./modules/searchDataKlien.js";
 import storeCheckboxState from "./modules/storeCheckboxState.js";
 import changeActiveState from "./modules/changeActiveState.js";
+import storeFilterCheckbox from "./modules/storeFilterCheckbox.js";
 
 if (document.querySelector(".home-page")) {
     changeActiveState();
@@ -11,6 +12,7 @@ if (document.querySelector(".home-page")) {
     searchDataKlien();
     storeCheckboxState();
     changeActiveState();
+    storeFilterCheckbox();
 }
 
 const tooltipTriggerList = document.querySelectorAll(
