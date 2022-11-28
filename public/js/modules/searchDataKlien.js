@@ -1,5 +1,6 @@
 import toggleColumns from "./toggleColumns.js";
 import toggleAllCheckboxes from "./toggleAllCheckboxes.js";
+import linkify from "./linkify.js";
 
 const d = document;
 
@@ -47,6 +48,7 @@ function searchDataKlien() {
             let res = xhr.responseText;
             clientTable.innerHTML = res;
             toggleColumns();
+            linkify();
         };
 
         xhr.setRequestHeader(
