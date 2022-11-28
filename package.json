@@ -5,8 +5,5 @@
     "devDependencies": {
         "@prettier/plugin-php": "^0.19.1",
         "prettier": "2.7.1"
-    },
-    "dependencies": {
-        "medium-editor": "^5.23.3"
     }
 }
