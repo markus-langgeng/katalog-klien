@@ -1,5 +1,5 @@
 <?php LoginSession::checkLoginSession($data["judul"]); ?>
-<main>
+<main class="detail-klien">
     <div class="container">
 
         <div class="row my-3">
@@ -35,17 +35,15 @@
 
                 <tr>
                     <th scope="row">Domain Tujuan</th>
-                    <td>
-                        <a href="<?= $data["detail_klien"]["domain_tujuan"] ?>">
-                        <?= $data["detail_klien"]["domain_tujuan"] ?></a>
+                    <td class="col-domain-tujuan">
+                        <?= nl2br($data["detail_klien"]["domain_tujuan"], true) ?>
                     </td>
                 </tr>
 
                 <tr>
                     <th scope="row">Permalink</th>
-                    <td>
-                        <a href="<?= $data["detail_klien"]["permalink"] ?>">
-                        <?= $data["detail_klien"]["permalink"] ?></a>
+                    <td class="col-permalink">
+                        <?= nl2br($data["detail_klien"]["permalink"], true) ?>
                     </td>
                 </tr>
 
@@ -71,9 +69,8 @@
 
                 <tr>
                     <th scope="row">Link Invoice</th>
-                    <td>
-                        <a href="<?= $data["detail_klien"]["invoice_link"] ?>">
-                        <?= $data["detail_klien"]["invoice_link"] ?></a>
+                    <td class="col-invoice-link">
+                        <?= nl2br($data["detail_klien"]["invoice_link"]) ?>
                     </td>
                 </tr>
 
