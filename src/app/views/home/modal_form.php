@@ -93,10 +93,11 @@
                                     Domain Tujuan
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control"
-                                        placeholder="www.example.com"
+                                    <textarea
+                                        class="form-control"
                                         id="domain_tujuan"
-                                        name="domain_tujuan">
+                                        name="domain_tujuan"
+                                        style="white-space:pre-wrap"></textarea>
                                 </div>
                             </div>
 
@@ -105,9 +106,10 @@
                                     Permalink
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control"
+                                    <textarea class="form-control"
                                         id="permalink"
-                                        name="permalink">
+                                        name="permalink"
+                                        style="white-space:pre-wrap"></textarea>
                                 </div>
                             </div>
 
@@ -158,9 +160,11 @@
                                     Link Invoice
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control"
+                                    <textarea
+                                        class="form-control"
                                         id="invoice_link"
-                                        name="invoice_link">
+                                        name="invoice_link"
+                                        style="white-space:pre-wrap"></textarea>
                                 </div>
                             </div>
 
@@ -210,8 +214,8 @@
                                 <div class="col-sm-10">
                                     <textarea type="text" class="form-control"
                                         id="note"
-                                        name="note">
-                                    </textarea>
+                                        name="note"
+                                        style="white-space:pre-wrap"></textarea>
                                 </div>
                             </div>
                         </form>
