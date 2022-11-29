@@ -16,7 +16,6 @@ if (document.querySelector(".home-page")) {
     storeFilterCheckbox();
 }
 if (document.querySelector(".home-page") || document.querySelector(".detail-klien")) {
-    console.log("lmao")
     linkify();
 }
 

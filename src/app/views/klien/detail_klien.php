@@ -36,14 +36,14 @@
                 <tr>
                     <th scope="row">Domain Tujuan</th>
                     <td class="col-domain-tujuan">
-                        <?= nl2br($data["detail_klien"]["domain_tujuan"], true) ?>
+                        <?= $data["detail_klien"]["domain_tujuan"] ?>
                     </td>
                 </tr>
 
                 <tr>
                     <th scope="row">Permalink</th>
                     <td class="col-permalink">
-                        <?= nl2br($data["detail_klien"]["permalink"], true) ?>
+                        <?= $data["detail_klien"]["permalink"] ?>
                     </td>
                 </tr>
 
